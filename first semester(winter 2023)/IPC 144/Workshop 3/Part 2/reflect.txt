@@ -1,0 +1,28 @@
+///////////////////////////////////////////////////////////////////////////
+                              Reflection
+                          Workshop - #3 (P2)
+Full Name  : Gyeongrok oh
+Student ID#: 119140226
+Email      : goh3@myseneca.ca
+Section    : NGG
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+
+(coffeeS == 'l' && one_product_type == 'l' ) || (coffeeS == 'l' && one_product_type == 'L') || (coffeeS == 'L' && one_product_type == 'l') || (coffeeS == 'L' && one_product_type == 'L') || (coffeeS == 'm' && one_product_type == 'm') || (coffeeS == 'm' && one_product_type == 'M') || (coffeeS == 'M' && one_product_type == 'm') || (coffeeS == 'M' && one_product_type == 'M') || (coffeeS == 'r' && one_product_type == 'r') || (coffeeS == 'r' && one_product_type == 'R') || (coffeeS == 'R' && one_product_type == 'r') || (coffeeS == 'R' && one_product_type == 'R')), ((daily_serving > 0 && daily_serving < 5) && one_product_weight == 250) || ((daily_serving > 4 && daily_serving < 10) && one_product_weight == 500) || ((daily_serving > 10) && one_product_weight == 1000), (prefer_cream == 'Y' && one_product_cream == 'Y') || (prefer_cream == 'y' && one_product_cream == 'Y') || (prefer_cream == 'Y' && one_product_cream == 'y') || (prefer_cream == 'y' && one_product_cream == 'y') || (prefer_cream == 'n' && one_product_cream == 'n') || (prefer_cream == 'N' && one_product_cream == 'N') || (prefer_cream == 'n' && one_product_cream == 'N') || (prefer_cream == 'N' && one_product_cream == 'n'));
+
+The above is my code that I compared to each other, I used the realioan.
+The above is the code that I compared to each other; I used the relational or logical expression and about 40. I cannot count all these, so I think of various ways, 
+but I used several relational terms. For example, I defined that a variable should be the same as an alphabet or a number, and only in that case did I make a formula that it was true. Finally, the number of cases was grouped into logical expressions.
+
+
+I don't think I used De Morgan's law for sure, but to explain, the first one was true because it was correct, the second one was false and false, 
+and when I asked if it was not, they put an exclamation mark on it, and the next question was to compare the numbers.
+
+
+
+In part 2, I wrote a lot of variables, so we need to know how they're used, and we need to make a variable name in the rules that programmers set 
+so that when someone sees my variables, they have to be meaningful. If they get longer, they're uncomfortable to see, so we have to write them down as neatly as possible.

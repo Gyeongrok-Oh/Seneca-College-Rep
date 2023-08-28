@@ -1,0 +1,40 @@
+///////////////////////////////////////////////////////////////////////////
+                              Reflection
+                          Workshop - #2 (P2)
+Full Name  : Gyeongrok Oh
+Student ID#: 119140226
+Email      : goh3@myseneca.ca
+Section    : NGG
+
+Authenticity Declaration:
+
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+ Floats do not guarantee exact representation. When a binary representation of the decimal is not possible, it will, under the hood, 
+find a similar value that is easier represented in the floating point system and use it.
+If 17.95 is expressed as a floating point, the Float at mantissa can be strangely expressed as 23 bits, or only 23 bits can be printed.
+
+
+
+we can see the cocerion in first question, money is Int and 100.0 is double so the compiler would print out double 
+second one which we can see implicit that is as the computer intended, it means that The computer casts itself.
+The third problem is that we can also see promotions, which means that computers promote to a larger data type if they calculate the number of numbers. 
+And we're going to do what we're going to do and we explicit before we run the program
+
+
+
+
+
+
+step by step
+0.00
+72
+0.00
+72
+we can see the casting of all these questions because it can be changed the data type and also it could promotion if question, the data type will be promoted, 
+and if the data is a print statement, the computer will change the data this is an Implicit and before we print out something, we can explicit the data type ourselves
+And finally, because of the truncation, the output of question 1 and output 3 appear differently, and the number of bytes we can write is limited, so the computer is not accurate.
+
+

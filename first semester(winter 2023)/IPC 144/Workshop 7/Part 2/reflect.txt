@@ -1,0 +1,37 @@
+///////////////////////////////////////////////////////////////////////////
+                               Reflection
+                             Workshop - #7
+Full Name  : gyeongrok oh
+Student ID#: 119140226
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+
+
+I think I have successfully defined it as non-reflective sections of logic. In order to achieve this, 
+I could not use the same code over and over again, but rather write the code easier to read and maintain so that I could call it up or reuse it when I wanted to.
+
+
+Structures provide a practical means of combining related data into a unified unit, simplifying programming tasks by reducing the amount of code necessary 
+and enabling straightforward organization and manipulation of data. If structures were not used, we would have to pass every individual piece of data to the function separately, 
+resulting in a much more complex and cumbersome process.
+
+
+do {
+      while (flag == 1) {
+         do {
+
+                if (move < 1 || move > game.pathLength) {
+
+                }
+                else {
+
+                }
+            } while (move < 1 || move > game.pathLength);
+
+   } while (!(player.numberOfLive == 0 || game.numberOfMove == 0) || flag == 0);
+
+The three levels of nesting

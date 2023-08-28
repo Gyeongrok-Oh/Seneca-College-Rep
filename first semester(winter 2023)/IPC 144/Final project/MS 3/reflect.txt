@@ -1,0 +1,50 @@
+/*/////////////////////////////////////////////////////////////////////////
+                        Assignment 1 - Milestone 3
+Full Name  : gyeongrok oh
+Student ID#: 119140226
+Email      : goh3@myseneca.ca
+Section    : NGG
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+/////////////////////////////////////////////////////////////////////////*/
+
+
+1.sort function
+This function sorts the array of Appointment structures in ascending order based on the appointment date and time. The sorting is based on the appointment date and time, where appointments with earlier dates and times are placed first in the array. The function uses the bubble sort algorithm to compare each pair of adjacent elements and swap them if they are not in the correct order.
+The function prototype takes two parameters, appointments and max_appointment. The appointments parameter is a pointer to the array of Appointment structures that needs to be sorted. The max_appointment parameter is an integer value specifying the maximum number of appointments stored in the array.
+The value contributed by this function is that it ensures that the appointments are displayed in chronological order. This makes it easier for the user to view and manage their appointments. With this function, the user can locate their next appointment, especially if there are many appointments in the system.
+
+2.isLeap function
+Based on the Gregorian calendar rules, this function determines whether a given year is a leap year. The function takes three parameters, year, month, and day, which are pointers to integer variables that hold the values for the appointment date. The function prompts the user to input the year, month, and day, then calculates the maximum number of days in the given month based on whether the year is a leap year.
+The value contributed by this function is that it ensures that the user inputs a valid date. By checking whether the year is a leap year, the function ensures that the maximum number of days for February is 29 days instead of 28. This prevents the user from entering an invalid date and improves the accuracy of the appointment system.
+
+3.findAppointIndexByPatientNum function
+This function searches the array of Appointment structures for a specific patient number and returns the index of the first appointment that matches the given patient number. If no appointment is found with the given patient number, the function returns -1. The function takes three parameters, patientNumber, appointment, and max, where patientNumber is the patient number to search for, an appointment is a pointer to the array of Appointment structures to search, and max is the maximum number of appointments that can be stored in the array.
+The value contributed by this function is that it allows the user to search for a specific appointment by the patient number. This is useful when the user wants to view or modify an appointment in a particular patient. With this function, the user can easily search through the list of appointments to find the one they are looking for, which can be time-consuming and error-prone.
+
+
+
+
+
+
+The limited use of scanf function calls in the client.c source code file was done intentionally to prevent potential errors and unexpected behavior in the program. The scanf function is responsible for retrieving input from the user and storing it in memory, but it can pose several issues if misused, such as buffer overflow, infinite loops, and incorrect input values.
+To address these concerns, the program employs a custom input function that handles user input in a secure and structured manner. This function validates the input, prompts the user for valid input if necessary, and clears the input buffer to prevent residual characters from affecting future input. This approach guarantees that the program only receives valid input and mitigates the risk of unintended consequences due to faulty input.
+Minimizing the usage of scanf function calls enhances the program's reliability by reducing the possibility of input-related errors and offering a more robust and dependable user experience. Moreover, it boosts the program's overall security by mitigating the potential for buffer overflow attacks or other security vulnerabilities related to input validation.
+
+
+
+
+
+
+
+
+
+Functions are a crucial feature in programming, providing benefits such as code reusability, modularity, and improved readability.
+One of the primary advantages of using functions is reusability. Instead of writing the same code over and over again, functions can be created once and then used whenever required. This saves time, helps avoid code redundancy, and makes maintenance much more accessible.
+Functions also promote modularity, breaking code into smaller, more manageable modules. This logical separation of code reduces the overall complexity of the program and makes collaboration more efficient.
+In addition, functions enhance code readability by grouping code that performs specific tasks. This makes it easier to maintain the code and reduces the likelihood of bugs.
+Parameters are another vital aspect of functions, allowing them to receive input values that make them more flexible and adaptable. Finally, the return value of a function enables the caller to utilize the results of a function for other purposes.
+The biggest reason I wrote these three was for reuse, and there are many things I need to write functions. Functions are an essential programming component, facilitating code maintenance, readability, scalability, and reuse.

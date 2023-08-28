@@ -1,0 +1,36 @@
+///////////////////////////////////////////////////////////////////////////
+                               Reflection
+                             Workshop - #6
+Full Name  : Gyeongrok oh
+Student ID#: 119140226
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+
+There are three significant iterations in C. There are for loop, while loop, and do while loop. For loop is good when we want to know the number of times we want to execute. 
+In the case of a while loop, we can make it cycle until the value we specified in the condition is false, and a do while loop is good because we can make an execution sentence once in the Do regardless of the state.
+When working with arrays, it is crucial to have control over the number of iterations to prevent errors and optimize the efficiency of the code. 
+The for loop provides such control by allowing you to specify the number of iterations based on the size of the array. 
+This information can be used to optimize the loop to execute only the necessary number of times, which can be particularly advantageous when dealing with large arrays. 
+By knowing the exact number of iterations required, unnecessary iterations can be avoided, resulting in improved code performance.
+
+
+To eliminate errors in the code and make it perfect, we need to test and debug it. We have to test it and see if the code works the way it does, 
+so we manually get all the cases. And debugging must first go through the process of discovering and correcting the errors we commonly experience using debugging tools.
+When writing code, it's easy to make mistakes with the syntax, such as forgetting to add a semicolon or misplacing a bracket. 
+Syntax errors can also occur due to misspelled variable or function names. To resolve these issues, a programmer should carefully review the code to identify the line(s) causing the error.
+Semantic errors can create issues like null pointer dereference, which happens when a program tries to access a memory address that is null or has not been allocated. 
+To prevent this, the programmer can implement programming practices such as verifying whether a pointer is null before attempting to access it. 
+Another general semantic error is the off-by-one error, when the programmer incorrectly indexes an array or loop, such as trying to access a non-existent element. 
+To resolve these errors, the programmer must carefully examine the code to identify the problematic lines and adjust the index to the intended value. Once identified, the syntax or spelling mistake can be corrected, 
+and the code can be recompiled to ensure it runs correctly.
+
+
+
+
+
+To solve this problem, it is essential to identify the problem. We can recognize where the output is wrong and correct it properly. 
+In the above case, it is not an error because the user entered the incorrect input, so there is no need to fix it, rerun it, and input it correctly.

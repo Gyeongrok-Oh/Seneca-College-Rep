@@ -1,0 +1,52 @@
+///////////////////////////////////////////////////////////////////////////
+                               Reflection
+                             Workshop - #8
+Full Name  : Gyeongrok oh
+Student ID#: 119140226
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+
+
+The ability to return value in two ways can be used in various situations without creating new functions on a case-by-case basis, giving developers greater flexibility. 
+However, with these features, code can become more difficult to read and maintain, reducing the complexity and readability of code bases.
+
+
+
+
+
+
+
+
+
+I think the calculatedReportData function is most closely related to dependence on other functions and coupling This function saves 3 times in the start function in the call
+ because I want to organize the values in the order I want in the strut The function continues to be called within each function, 
+and there are so many couplings that the function is not toxic that it becomes difficult to maintain later, 
+The calculatedReportData function has high coupling and dependence on other functions, making it difficult to maintain. 
+To improve its cohesion, it can be refactored into smaller, more focused functions. To reduce its coupling, 
+it can be modified to take in all necessary data as arguments or move struct ordering functionality into a separate function.
+
+
+
+
+
+
+Passing the structure to the function gives several advantages, such as simplified code, the better composition of the relevant data, and improved performance. 
+Pointers to structures can be used to further improve the efficiency of transferring data to functions, which prevents the need to make copies of structures and pass them to functions. 
+In certain code examples provided in the displayCatfoodData function, it would be more efficient to pass a pointer to a structure containing all the necessary data instead of passing individual variables.
+
+Below is the example code:
+
+struct CatFoodData {
+    int sku;
+    double prices;
+    double lb;
+    int calories;
+};
+
+void displayCatFoodData(struct CatFoodData *data) {
+    printf("%07d %10.2lf %10.1lf %8d\n", data->sku, data->prices, data->lb, data->calories);
+}

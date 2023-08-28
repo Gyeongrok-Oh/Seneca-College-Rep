@@ -1,0 +1,39 @@
+///////////////////////////////////////////////////////////////////////////
+                               Reflection
+                             Workshop - #4
+Full Name  : Gyeongrok oh
+Student ID#: 119140226
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+
+It gives us readability, and it's hard to understand, depending on the language of the human being, or the experience and ability of the writer, 
+we write code easily and concisely because it requires collaboration with others. So we have to use comments, variables, or functions according to the rules of developers 
+because we have to use them more comfortably and use one code more meaningfully to recognize them, and the longer the code becomes, the more capacity it takes and hard to see.
+
+
+
+
+
+
+
+Without the ability to overlap code blocks, code will become much more difficult and lead to code redundancy and a larger and more intractable code base.
+
+The sif-filter is lost, making it more difficult to control the flow of programs based on complex conditions.
+
+Overall, the lack of overlapping capabilities will greatly limit the functionality and expressiveness of programming languages, making it much more difficult to write complex and sustainable programs.
+
+
+
+
+
+
+
+
+
+
+If we use only if statements, we would be faced code duplication and a more complex codebase which is harder to maintain.
+ Or we don't need to check the necessary reports and can raise readability about the code.
