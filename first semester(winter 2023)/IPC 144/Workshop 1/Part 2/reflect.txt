@@ -1,0 +1,29 @@
+///////////////////////////////////////////////////////////////////////////
+
+                              Reflection
+                             Workshop - #1
+Full Name  : Gyeongrok Oh
+Student ID#: 119140226
+Email      : goh3@myseneca.ca
+Section    : NGG
+
+Authenticity Declaration:
+
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+
+
+1. C is a second language at me and my first language is a python becasue it is comfortable when I write the code and It is the second language, 
+but I think C is fast and does not have a high entry barrier among languages, 
+so it is good to learn and it is excellent for learning other languages.
+
+2.  I think there are four steps by step. First, you create a source file, as you did in VS, and then the C compiler compiles it. 
+Now, compilation turns the code that humans write into the code that machines write, and then you run the next file and you learn. 
+I'll get the last result.
+
+3. long story short, I want to be a master in C language and also Linux or Unix so I can manage my file in my mind, and I learn and memorize all of the codes 
+so I have to complete my work more easily and I would like to write my code comfortably when other people see it 
+and have many projects and complete it successfully and go to a Google or Microsoft, 
+or Apple developer and teach folks that want to learn to me about how to coding.
