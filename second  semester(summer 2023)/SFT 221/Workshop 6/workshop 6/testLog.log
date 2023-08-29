@@ -1,0 +1,138 @@
+[INFO Sat Jun 17 12:47:22 2023]: result.str = This is a
+ string with embedded newline characters and 
+12345 numbers inside it as well 7890
+[INFO Sat Jun 17 12:47:22 2023]: first character = T
+[INFO Sat Jun 17 12:47:22 2023]: For i = 0, str[0] = T
+[INFO Sat Jun 17 12:47:22 2023]: sp = 0, str[0] = T, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 1, str[1] = h, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 2, str[2] = i, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 3, str[3] = s, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: Next space index: 4, ispace = 8
+[INFO Sat Jun 17 12:47:22 2023]: For i = 4, str[4] =  
+[INFO Sat Jun 17 12:47:22 2023]: While i = 4, str[4] =  , isspace(str[4]) = 8
+[INFO Sat Jun 17 12:47:22 2023]: sp = 0, str[5] = i, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 1, str[6] = s, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: Next space index: 7, ispace = 0
+[INFO Sat Jun 17 12:47:22 2023]: For i = 7, str[7] =  
+[INFO Sat Jun 17 12:47:22 2023]: While i = 7, str[7] =  , isspace(str[7]) = 8
+[INFO Sat Jun 17 12:47:22 2023]: sp = 0, str[8] = a, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: Next space index: 9, ispace = 0
+[INFO Sat Jun 17 12:47:22 2023]: For i = 9, str[9] = 
+
+[INFO Sat Jun 17 12:47:22 2023]: While i = 9, str[9] = 
+, isspace(str[9]) = 8
+[INFO Sat Jun 17 12:47:22 2023]: result.lineStarts[1] = 10
+[INFO Sat Jun 17 12:47:22 2023]: While i = 10, str[10] =  , isspace(str[10]) = 8
+[INFO Sat Jun 17 12:47:22 2023]: sp = 0, str[11] = s, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 1, str[12] = t, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 2, str[13] = r, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 3, str[14] = i, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 4, str[15] = n, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 5, str[16] = g, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: Next space index: 17, ispace = 0
+[INFO Sat Jun 17 12:47:22 2023]: For i = 17, str[17] =  
+[INFO Sat Jun 17 12:47:22 2023]: While i = 17, str[17] =  , isspace(str[17]) = 8
+[INFO Sat Jun 17 12:47:22 2023]: sp = 0, str[18] = w, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 1, str[19] = i, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 2, str[20] = t, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 3, str[21] = h, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: Next space index: 22, ispace = 8
+[INFO Sat Jun 17 12:47:22 2023]: For i = 22, str[22] =  
+[INFO Sat Jun 17 12:47:22 2023]: While i = 22, str[22] =  , isspace(str[22]) = 8
+[INFO Sat Jun 17 12:47:22 2023]: sp = 0, str[23] = e, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 1, str[24] = m, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 2, str[25] = b, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 3, str[26] = e, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 4, str[27] = d, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 5, str[28] = d, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 6, str[29] = e, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 7, str[30] = d, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: Next space index: 31, ispace = 0
+[INFO Sat Jun 17 12:47:22 2023]: For i = 31, str[31] =  
+[INFO Sat Jun 17 12:47:22 2023]: While i = 31, str[31] =  , isspace(str[31]) = 8
+[INFO Sat Jun 17 12:47:22 2023]: sp = 0, str[32] = n, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 1, str[33] = e, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 2, str[34] = w, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 3, str[35] = l, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 4, str[36] = i, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 5, str[37] = n, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 6, str[38] = e, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: Next space index: 39, ispace = 8
+[INFO Sat Jun 17 12:47:22 2023]: For i = 39, str[39] =  
+[INFO Sat Jun 17 12:47:22 2023]: While i = 39, str[39] =  , isspace(str[39]) = 8
+[INFO Sat Jun 17 12:47:22 2023]: sp = 0, str[40] = c, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 1, str[41] = h, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 2, str[42] = a, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 3, str[43] = r, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 4, str[44] = a, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 5, str[45] = c, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 6, str[46] = t, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 7, str[47] = e, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 8, str[48] = r, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 9, str[49] = s, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: Next space index: 50, ispace = 8
+[INFO Sat Jun 17 12:47:22 2023]: For i = 50, str[50] =  
+[INFO Sat Jun 17 12:47:22 2023]: While i = 50, str[50] =  , isspace(str[50]) = 8
+[INFO Sat Jun 17 12:47:22 2023]: sp = 0, str[51] = a, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 1, str[52] = n, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 2, str[53] = d, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: Next space index: 54, ispace = 0
+[INFO Sat Jun 17 12:47:22 2023]: For i = 54, str[54] =  
+[INFO Sat Jun 17 12:47:22 2023]: While i = 54, str[54] =  , isspace(str[54]) = 8
+[INFO Sat Jun 17 12:47:22 2023]: While i = 55, str[55] = 
+, isspace(str[55]) = 8
+[INFO Sat Jun 17 12:47:22 2023]: result.lineStarts[2] = 56
+[INFO Sat Jun 17 12:47:22 2023]: sp = 0, str[56] = 1, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 1, str[57] = 2, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 2, str[58] = 3, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 3, str[59] = 4, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 4, str[60] = 5, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: Next space index: 61, ispace = 0
+[INFO Sat Jun 17 12:47:22 2023]: For i = 61, str[61] =  
+[INFO Sat Jun 17 12:47:22 2023]: While i = 61, str[61] =  , isspace(str[61]) = 8
+[INFO Sat Jun 17 12:47:22 2023]: sp = 0, str[62] = n, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 1, str[63] = u, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 2, str[64] = m, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 3, str[65] = b, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 4, str[66] = e, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 5, str[67] = r, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 6, str[68] = s, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: Next space index: 69, ispace = 8
+[INFO Sat Jun 17 12:47:22 2023]: For i = 69, str[69] =  
+[INFO Sat Jun 17 12:47:22 2023]: While i = 69, str[69] =  , isspace(str[69]) = 8
+[INFO Sat Jun 17 12:47:22 2023]: sp = 0, str[70] = i, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 1, str[71] = n, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 2, str[72] = s, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 3, str[73] = i, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 4, str[74] = d, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 5, str[75] = e, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: Next space index: 76, ispace = 0
+[INFO Sat Jun 17 12:47:22 2023]: For i = 76, str[76] =  
+[INFO Sat Jun 17 12:47:22 2023]: While i = 76, str[76] =  , isspace(str[76]) = 8
+[INFO Sat Jun 17 12:47:22 2023]: sp = 0, str[77] = i, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 1, str[78] = t, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: Next space index: 79, ispace = 0
+[INFO Sat Jun 17 12:47:22 2023]: For i = 79, str[79] =  
+[INFO Sat Jun 17 12:47:22 2023]: While i = 79, str[79] =  , isspace(str[79]) = 8
+[INFO Sat Jun 17 12:47:22 2023]: sp = 0, str[80] = a, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 1, str[81] = s, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: Next space index: 82, ispace = 0
+[INFO Sat Jun 17 12:47:22 2023]: For i = 82, str[82] =  
+[INFO Sat Jun 17 12:47:22 2023]: While i = 82, str[82] =  , isspace(str[82]) = 8
+[INFO Sat Jun 17 12:47:22 2023]: sp = 0, str[83] = w, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 1, str[84] = e, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 2, str[85] = l, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 3, str[86] = l, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: Next space index: 87, ispace = 8
+[INFO Sat Jun 17 12:47:22 2023]: For i = 87, str[87] =  
+[INFO Sat Jun 17 12:47:22 2023]: While i = 87, str[87] =  , isspace(str[87]) = 8
+[INFO Sat Jun 17 12:47:22 2023]: sp = 0, str[88] = 7, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 1, str[89] = 8, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 2, str[90] = 9, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: sp = 3, str[91] = 0, isspace = 0
+[INFO Sat Jun 17 12:47:22 2023]: Next space index: 92, ispace = 8
+[INFO Sat Jun 17 12:47:22 2023]: this is a test to find a bug using logging
+[INFO Sat Jun 17 12:47:22 2023]: I don't know well about if issapce is true, the return value is 8
+[INFO Sat Jun 17 12:47:22 2023]: LINE i = 0
+[INFO Sat Jun 17 12:47:22 2023]: LINE i = 1
+[INFO Sat Jun 17 12:47:22 2023]: LINE i = 2
