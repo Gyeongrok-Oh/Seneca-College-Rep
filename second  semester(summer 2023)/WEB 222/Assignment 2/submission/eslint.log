@@ -1,0 +1,12 @@
+
+> web222-assignment-2@6.0.0 eslint
+> eslint src/**/*.js
+
+
+C:\Users\0kr36\a2\src\observations.js
+  329:10  warning  Unnecessary 'else' after 'return'  no-else-return
+  385:12  warning  Unnecessary 'else' after 'return'  no-else-return
+
+✖ 2 problems (0 errors, 2 warnings)
+  0 errors and 2 warnings potentially fixable with the `--fix` option.
+
