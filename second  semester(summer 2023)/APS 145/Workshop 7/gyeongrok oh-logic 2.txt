@@ -1,0 +1,63 @@
+Data structure 
+
+number_of_wash = 0
+monthly_type
+optional_charge
+
+
+
+sub(monthly)::start
+
+1.Receive number_of_wash, monthly_type
+
+2. if number_of_wash < 3 (twice a day)
+	Yes: Does the customer want to wash with the option they registered (monthly_type ==)?
+		Yes: wash the car 
+		     number_of_wash += 1
+
+		No: Call the sub(regular) and send optional_charge
+
+	No: Do you want to pay the regular fare because it's up to three times a day?
+		Yes: Call the sub(regular) and send optional_charge
+
+3.end
+
+
+
+
+
+sub(regular)::start
+
+1. Receive optional_charge
+
+2. What options does the customer want?
+	Basic: optional_charge += 5.50
+
+	Clean: optional_charge += 8.75
+	
+	Super Clean: optional_charge += 12.50
+3.end
+
+
+
+
+main::start
+
+1.Are you a member who already registered for the monthly membership system?
+	Yes : go to step#2
+
+	No: 1) they want to sign-up for and are charged accordingly for that selection(wash options)
+	    2) store the monthly_type that customer selected
+
+
+2. customer want to wash the car?
+	Yes: Call the sub(monthly) and send number_of_wash, monthly_type , optional_charge
+
+	No: go to step #3
+
+3. Did the customer pay with a regular rate?
+	Yes: Display the receipt
+
+	No: go to step#4
+
+4.end

@@ -1,0 +1,175 @@
+
+
+
+==============
+DATA STURCTURE
+==============
+Condition List
+--------------
+type
+temp
+amount
+amount unit
+--------------
+Action Info
+--------------
+unit (cm)
+==============
+
+1. START
+
+2. variables:
+	Condition List (set to empty)
+
+3. Display: "Please Enter Type"
+	a. is type snow?
+		Yes:
+			i. set type = snow
+		 
+	b. is type ice?
+		Yes:
+			i. go back to step #3
+
+	c. is type mixed?
+		Yes
+			i. go back to step #3
+
+4. Display: "Please Enter Amount"
+	a. is amount entered?
+		Yes:
+			i. set amount unit = unit (cm)
+			ii. amount = entered amount
+
+		No:
+			i. go back to step #4
+
+5. Display: "Please Enter Temperture"
+	a. is temperture entered?
+		Yes:
+			i. set temp = entered temperture
+
+		No:
+			i. go back to step #5
+
+6.Is the type snow?
+	Yes:
+	 6-1. amount <-2.0cm
+       	a) Temp <-15.0, 
+          		Action: 1(light) Sand truck
+       	b) Temp -15.0 to -7.0, 
+          		Action: 1(light) Salt truck
+       	c) Temp >-7.0,
+          		Action: No action required
+
+	 6-2. amount is >2.0-5.75cm
+       	a) Temp <-15.0, 
+          		Action :1(normal) Sand truck
+       	b) Temp -15.0 to -7.0, 
+          		Action: 1(normal) Salt truck
+       	c) Temp >-7.0, 
+          		Action: No action required
+
+	 6-3. amount >5.75-15.5cm
+       	a) Temp <-15.0,
+          		Action: 1 plow truck, 1(normal) Sand truck
+       	b) Temp -15.0 to -7.0,
+          		Action:1 plow truck, 1(normal) Salt truck
+       	c) Temp >-7.0,
+          		Action: 1 plow truck
+
+	 6-4. amount >15.5-42.5cm
+       	a) Temp <-15.0, 
+          		Action: 2 plow truck, 1(normal) Sand truck
+       	b) Temp -15.0 to -7.0,
+          		Action: 2 plow truck, 1(normal) Salt truck
+       	c) Temp >-7.0,
+          		Action: 2 plow truck
+	 6-5. amount >42.5cm 
+       	a) State of Emergency
+
+7.Is the type ice?
+	Yes:
+	7-1. amount <=3.0mm
+       	a)No action required
+
+
+	7-2. amount >3.0-5.5mm 
+       	a) Temp <-15.0 ,
+         		Action:1(normal) Sand truck
+       	b) Temp -15.0 to -7.0 ,
+         		Action: 1(normal) salt truck
+       	c) Temp >-7.0 ,
+         		Action: No action requied
+
+
+	7-3. amount >5.5-17.0mm
+      	 a) Temp <-15.0 ,
+          		Action: 1(heavy) Sand truck
+       	 b) Temp -15.0 to -7.0 ,
+          		Action: 1(heavy) salt truck
+       	 c) Temp >-7.0 ,
+          		Action: 1(heavy) Salt truck
+
+
+	7-4. amount >17.0mm
+       	a) State of emergency
+
+8. Is the type mixed?
+	Yes:
+	8-1. is amount same or less than 3.5cm?
+		Yes:
+			i. check temperture
+				- is temperture warmer than -7.0?
+					Yes:Display: "No Action Required"
+
+				- is temperture between -15.0 to -7.0?
+					Yes:Display: "No Action Require"
+		
+				-is temperture colder than -15.0?
+					Yes:Display: "No Action Required"
+		
+	8-2. is amount between 3.5cm and 5.75cm?
+		Yes:
+			i. check temperture
+				- is temperture warmer than -7.0?
+					Yes: Display: "It needs one plow truck"
+
+				- is temperture between -15.0 to -7.0?
+					Yes: Display: "It needs one plow truck and one salt truck for the light rating"
+		
+				-is temperture colder than -15.0?
+					Yes: Display: "It needs one plow truck and one sand truck for the light rating
+		
+	8-3. is amount between 5.75cm and 16.5cm?
+		Yes:
+			i. check temperture
+				- is temperture warmer than -7.0?
+					Yes: Display: "It needs one plow truck and one salt truck for the normal rating"
+
+				- is temperture between -15.0 to -7.0?
+					Yes: Display: "It needs one plow truck and one salt truck for the heavy rating"
+		
+				-is temperture colder than -15.0?
+					Yes: Display: "It needs one plow truck and one sand truck for the heavy rating"
+
+	8-4. is amount between 16.5cm and 40.0cm?
+		Yes:
+			i. check temperture
+				- is temperture warmer than -7.0?
+					Yes: Display: "It needs two plow trucks and one salt truck for the light rating"
+
+				- is temperture between -15.0 to -7.0?
+					Yes: Display: "It needs two plow trucks and one salt truck for the heavy rating"
+		
+				-is temperture colder than -15.0?
+					Yes: Display: "It needs two plow trucks and one sand truck for the heavy rating"
+
+	8-5. is amount more than 40.0cm?
+		Yes:
+			Display: "State of emergency (Oragnize army and other jurisdiction support)"
+
+20. Stop 
+
+
+
+

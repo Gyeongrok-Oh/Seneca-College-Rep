@@ -1,0 +1,148 @@
+==============
+DATA STURCTURE
+==============
+Condition List
+--------------
+temperature
+amount
+amount unit
+plow truck quantity
+sand truck quantity
+salt truck quantity
+application rate
+--------------
+Action Info
+--------------
+plow truck
+sand truck
+salt truck
+light
+normal
+unit (cm)
+==============
+
+1. START
+
+2. variables:
+	Condition List (set to empty)
+
+4. Display: "Please Enter Amount"
+	a. is amount entered?
+		Yes:
+			i. set amount unit = unit (cm)
+			ii. amount = entered amount
+
+		No:
+			i. go back to step #4
+
+5. Display: "Please Enter Temperture"
+	a. is temperture entered?
+		Yes:
+			i. set temperture = entered temperture
+
+		No:
+			i. go back to step #5
+
+
+7. Check amount
+	a. is amount same or less than 3.5cm?
+		Yes:
+			i. check temperture
+				- is temperture warmer than -7.0?
+					Yes:
+						set plow truck quantity = 0
+						set sand truck quantity = 0
+						set salt truck quantity = 0
+						Display: "No Action Required"
+
+				- is temperture between -15.0 to -7.0?
+					Yes:
+						set plow truck quantity = 0
+						set sand truck quantity = 0
+						set salt truck quantity = 1
+						Display: "No Action Required"
+		
+				-is temperture colder than -15.0?
+					Yes:
+						set plow truck quantity = 0
+						set sand truck quantity = 0
+						set salt truck quantity = 0
+						Display: "No Action Required"
+		
+	b. is amount between 3.5cm and 5.75cm?
+		Yes:
+			i. check temperture
+				- is temperture warmer than -7.0?
+					Yes:
+						set plow truck quantity = 1
+						set sand truck quantity = 0
+						set salt truck quantity = 0
+
+				- is temperture between -15.0 to -7.0?
+					Yes:
+						set plow truck quantity = 1
+						set sand truck quantity = 0
+						set salt truck quantity = 1
+						set application rate = light
+		
+				-is temperture colder than -15.0?
+					Yes:
+						set plow truck quantity = 1
+						set sand truck quantity = 1
+						set salt truck quantity = 0
+						set application rate = light
+		
+	c. is amount between 5.75cm and 16.5cm?
+		Yes:
+			i. check temperture
+				- is temperture warmer than -7.0?
+					Yes:
+						set plow truck quantity = 1
+						set sand truck quantity = 0
+						set salt truck quantity = 1
+						set application rate = normal
+				- is temperture between -15.0 to -7.0?
+					Yes:
+						set plow truck quantity = 1
+						set sand truck quantity = 0
+						set salt truck quantity = 1
+						set application rate = heavy
+		
+				-is temperture colder than -15.0?
+					Yes:
+						set plow truck quantity = 1
+						set sand truck quantity = 1
+						set salt truck quantity = 0
+						set application rate = heavy
+
+	d. is amount between 16.5cm and 40.0cm?
+		Yes:
+			i. check temperture
+				- is temperture warmer than -7.0?
+					Yes:
+						set plow truck quantity = 2
+						set sand truck quantity = 0
+						set salt truck quantity = 1
+						set application rate = light
+
+				- is temperture between -15.0 to -7.0?
+					Yes:
+						set plow truck quantity = 2
+						set sand truck quantity = 0
+						set salt truck quantity = 1
+						set application rate = heavy
+		
+				-is temperture colder than -15.0?
+					Yes:
+						set plow truck quantity = 2
+						set sand truck quantity = 1
+						set salt truck quantity = 0
+						set application rate = heavy
+
+	e. is amount more than 40.0cm?
+		Yes:
+			Display: "State of emergency (Oragnize army and other jurisdiction support)"
+
+8. END
+
+

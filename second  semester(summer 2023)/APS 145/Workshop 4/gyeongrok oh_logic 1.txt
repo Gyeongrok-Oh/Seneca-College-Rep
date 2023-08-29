@@ -1,0 +1,64 @@
+1. sub(computer):::start
+
+2. srand(time(NULL)) // // Seed the random number generator with the current time
+
+3. Initialize variable: random_number = rand() % 3 + 1    // Generate a random number between 1 and 3
+
+4. Return random_number
+
+
+1. main:::start
+
+2. Initialize variable: people_choice = 0, computer_choice = 0, decided_winner = 0
+
+3. Get the input from user and store people_choice: "please enter the 1(Rock), 2(Paper), 3(scissor)"
+
+4. Did the user choose 1(Rock), 2(Paper), 3(scissor)?
+	Yes: go to step #5
+
+	No: go to step #3
+
+5. store the computer_choice from sub(computer)
+
+6. Has the winner or loser been decided? (decided_winner != 1)
+	Yes: Did the computer choose 1(Rock)?
+		Yes: Did the people choose 1?
+			Yes: Display the user: "It's a tie, so let's do it again"
+
+			No: Did the people choose 2?
+				Yes: I. Display the user: "You won the rock-paper-scissors game"
+				     II.  decided_winner = 1
+				
+				No:  Did the people choose 3?
+					Yes: I. Display the user: "The computer won the game"
+				     	     II.  decided_winner = 1
+	
+		No: Did the computer choose 2(Paper)?
+			Yes: Did the people choose 1?
+				Yes: I. Display the user: "The computer won the game"
+				     II.  decided_winner = 1
+
+				No: Did the people choose 2?
+					Yes: Display the user: "It's a tie, so let's do it again"
+				
+					No: Did the people choose 3?
+						Yes: I. Display the user: "You won the rock-paper-scissors game"
+				     		     II.  decided_winner = 1
+
+			No: Did the computer choose 3(scissor)?
+				Yes: Did the people choose 1?
+					Yes: I. Display the user: "You won the rock-paper-scissors game"
+				     	     II.  decided_winner = 1
+
+					No: Did the people choose 2?
+						Yes: I. Display the user: "The computer won the game"
+				     		     II.  decided_winner = 1
+				
+						No: Did the people choose 3?
+							Yes: Display the user: "It's a tie, so let's do it again"
+		
+	No: go to step #7
+
+7.end
+
+

@@ -1,0 +1,51 @@
+Data structure
+
+
+
+1. sub(computer random):::start
+
+2. srand(time(NULL)) // // Seed the random number generator with the current time
+
+3. Initialize variable: random_number = rand() % 3 + 1    // Generate a random number between 1 and 3
+
+4. Return random_number
+
+
+Main
+
+Step 1 : Start
+Step 2 : Countdown =3
+         a)yes,go to step 5
+         b)no,go to step 1
+Step 3 : store computer = Call the sub(computer random) 
+Step 4 : Human = choose Rock,paper,scissor
+Step 5 : computer object = human object
+         a)yes,go to step 1
+         b)no,go to step 6
+Step 6 : computer object rock
+         a)yes, go to step 7 
+         b)no, go to step 9
+Step 7 : human object paper
+         a)yes, go to step 8 
+         b)no, go to step 9
+Step 8 : human wins
+
+Step 9 : computer object scissor 
+         a)yes, go to step 10
+         b)no, go to step 11
+Step 10: human object rock
+         a)yes, go to step 8
+         b)no , go to step 11         
+Step 11: computer object paper
+         a)yes, go to step 12
+         b)no, go to step 13
+Step 12: human object scissor
+         a)yes, go to step 8
+         b)no , go to step 13
+Step 13: computer wins
+Step 14: End
+
+
+
+
+
