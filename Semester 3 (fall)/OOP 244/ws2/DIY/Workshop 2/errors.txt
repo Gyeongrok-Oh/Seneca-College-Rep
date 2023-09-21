@@ -1,4 +1,0 @@
-Population.cpp: In function ‘void sdds::deallocateMemory()’:
-Population.cpp:208:14: error: ‘i’ was not declared in this scope
-         for (i = 0; i < numPostal; i++) {
-              ^
