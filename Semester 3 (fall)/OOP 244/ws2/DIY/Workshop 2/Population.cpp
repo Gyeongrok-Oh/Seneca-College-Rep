@@ -12,8 +12,14 @@ namespace sdds
     // Global variables:
     int numPostal;
     PostalCode* postalCode;
-    PostalCode* temp;
 
+
+    void init(PostalCode code[], const int cycle) {
+        for (int i = 0; i < cycle; i++) {
+            code[i].code = nullptr;
+            code[i].population = 0;
+        }
+    }
 
     bool startsWith(const char* cstring, const char* subString) {
         return std::strstr(cstring, subString) == cstring;
@@ -59,11 +65,8 @@ namespace sdds
 
         postalCode = new PostalCode[numPostal + 1];
 
-        for (i = 0; i < numPostal; i++) {
-            postalCode[i].code = nullptr;
-            postalCode[i].population = 0;
-        }
-
+        init(postalCode, numPostal + 1);
+ 
         for (i = 0; i < numPostal && check; i++) {
             if (!load(postalCode[i])) {
                 check = false;
@@ -103,72 +106,62 @@ namespace sdds
     }
 
     bool load(const char* filename, const char* partial) {
-        int i = 0, found = 0;
-     
+        int found = 0;
         bool value = false;
 
         if (!openFile(filename) || !load(filename)) {
-            cerr << "Could not open data file: PCpopulations<ENDL> or data load is failed " << std::endl;
+            cerr << "Could not open data file or data load failed." << endl;
             return false;
         }
-        
 
-        if ((strcmp(partial, "all") == 0)) {
+        if (strcmp(partial, "all") == 0) {
             value = true;
-        
         }
         else {
-            temp = new PostalCode[numPostal + 1];
+            PostalCode* temp = new PostalCode[numPostal + 1];
 
-            for (i = 0; i < numPostal; i++) {
-                temp[i].code = nullptr;
-                temp[i].population = 0;
-            }
+            init(temp, numPostal + 1);
 
-            for (i = 0; i < numPostal; i++) {
+            // Copy matching entries to temp
+            for (int i = 0; i < numPostal; i++) {
                 if (startsWith(postalCode[i].code, partial)) {
-                    temp[found].code = postalCode[i].code;
+                    temp[found].code = new char[strlen(postalCode[i].code) + 1];
+                    strcpy(temp[found].code, postalCode[i].code);
                     temp[found].population = postalCode[i].population;
+
                     found++;
                 }
             }
 
-            if (found != 0) {
+            // Deallocate old memory
+            deallocateMemory();
+
+            // Allocate new memory for postalCode
+            postalCode = new PostalCode[found + 1];
+ 
+            init(postalCode, found + 1);
+
+            // Copy data from temp to postalCode
+            for (int i = 0; i < found; i++) {
+                postalCode[i].code = new char[strlen(temp[i].code) + 1];
+                strcpy(postalCode[i].code, temp[i].code);
+                postalCode[i].population = temp[i].population;
+            }
+
+            // Deallocate temp memory
+            for (int i = 0; i < numPostal + 1; i++) {
+                delete[] temp[i].code;
+                temp[i].code = nullptr;
                 
-                deallocateMemory();
-
-                postalCode = new PostalCode[found + 1];
-                
-                for (i = 0; i < found; i++) {
-                    postalCode[i].code = temp[i].code;
-                    postalCode[i].population = temp[i].population;
-                }
-
-            
             }
-            else {
-                numPostal = 0;
-            }
-         
-            if (temp != nullptr) {
-                for (i = 0; i < found; i++) {
-                    if (temp[i].code != nullptr) {
-               
-                        temp[i].code = nullptr;
-                        delete[] temp[i].code;
-                    }
-                }
-                temp = nullptr;
-                delete[] temp;
-
-                numPostal = found;
-            }
+            delete[] temp;
+            temp = nullptr;
+            numPostal = found;
             value = true;
         }
-        
+
         closeFile();
         return value;
-
     }
 
     void display() {
@@ -195,16 +188,15 @@ namespace sdds
 
     void deallocateMemory()
     {
-        for (int i = 0; i < numPostal; i++) {
-            postalCode[i].code = nullptr;
-            delete[] postalCode[i].code;
+
+        if (postalCode != nullptr) {
+            for (int i = 0; i < numPostal; i++) {
+                delete[] postalCode[i].code;
+                postalCode[i].code = nullptr;
+            }
+
+            delete[] postalCode;
+            postalCode = nullptr;
         }
-
-        // Lastly, delete the Postalcode pointer which memory was allocated
-        delete[] postalCode;
-        postalCode = nullptr;
-        numPostal = 0;
-
-
     }
 } // namespace sdds

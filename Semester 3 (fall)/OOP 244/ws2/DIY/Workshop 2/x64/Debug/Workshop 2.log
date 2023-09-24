@@ -1,5 +1,1 @@
-﻿  File.cpp
-  main.cpp
-  Population.cpp
-  Generating Code...
-  Workshop 2.vcxproj -> C:\Users\0kr36\Seneca-College-Rep\Semester 3 (fall)\OOP 244\ws2\DIY\Workshop 2\x64\Debug\Workshop 2.exe
+﻿LINK : fatal error LNK1168: cannot open C:\Users\0kr36\Seneca-College-Rep\Semester 3 (fall)\OOP 244\ws2\DIY\Workshop 2\x64\Debug\Workshop 2.exe for writing
