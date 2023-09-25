@@ -1,0 +1,11 @@
+I have diligently reviewed my final solutions for each deliverable of the workshop and revisited the pertinent sections of the course notes to ensure a comprehensive understanding of the concepts covered in this workshop.
+
+I gained a deeper grasp of various programming and problem-solving concepts during this workshop. I honed my skills in data manipulation, algorithm design, and code optimization. Furthermore, I became proficient in handling real-world scenarios, such as memory allocation and deallocation in C++ and file loading and parsing techniques.
+
+One notable takeaway was the significance of memory management in C++. The workshop reiterated the importance of dynamic memory allocation with 'new' and 'delete,' emphasizing that failing to deallocate memory can lead to memory leaks.
+
+Additionally, I solidified my knowledge of file handling. The workshop stressed the importance of robust error handling when dealing with file operations.
+
+Moreover, I understood the critical role of pointer variables within structures and the necessity of memory allocation for these pointers to prevent memory leaks and runtime errors.
+
+This comprehensive review and reflection have reinforced my understanding of the workshop's concepts and their practical applications in real-world programming scenarios. I am better equipped to apply these skills in future projects and continue my journey as a proficient programmer.

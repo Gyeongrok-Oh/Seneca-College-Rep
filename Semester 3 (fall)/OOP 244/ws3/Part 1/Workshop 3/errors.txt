@@ -1,0 +1,15 @@
+In file included from main_prof.cpp:18:0:
+Train.h: In function ‘int main()’:
+Train.h:15:8: error: ‘void sdds::Train::set(const char*)’ is private
+   void set(const char* name);
+        ^
+main_prof.cpp:61:19: error: within this context
+   trains[i].set(st);
+                   ^
+In file included from main_prof.cpp:18:0:
+Train.h:16:8: error: ‘void sdds::Train::set(int, int)’ is private
+   void set(int noOfPassengers, int departure);
+        ^
+main_prof.cpp:62:41: error: within this context
+   trains[i].set(100+i*155, 630+i*100+i*6);
+                                         ^
