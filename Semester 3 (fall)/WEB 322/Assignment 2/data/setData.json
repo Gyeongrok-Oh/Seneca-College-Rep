@@ -1,0 +1,35 @@
+[
+    {
+      "set_num": "001-1",
+      "name": "Gears",
+      "year": "1965",
+      "theme_id": "1",
+      "num_parts": "43",
+      "img_url": "https://cdn.rebrickable.com/media/sets/001-1.jpg"
+    },
+    {
+      "set_num": "0011-2",
+      "name": "Town Mini-Figures",
+      "year": "1979",
+      "theme_id": "67",
+      "num_parts": "12",
+      "img_url": "https://cdn.rebrickable.com/media/sets/0011-2.jpg"
+    },
+    {
+        "set_num": "02-Jan",
+        "name": "Bulldozer Chain Links",
+        "year": "1982",
+        "theme_id": "453",
+        "num_parts": "50",
+        "img_url": "https://cdn.rebrickable.com/media/sets/01-2.jpg"
+    },
+    {
+        "set_num": "01-Feb",
+        "name": "Extra Large Tires & Hubs",
+        "year": "1982",
+        "theme_id": "453",
+        "num_parts": "4",
+        "img_url": "https://cdn.rebrickable.com/media/sets/02-1.jpg"
+    }
+]
+  
