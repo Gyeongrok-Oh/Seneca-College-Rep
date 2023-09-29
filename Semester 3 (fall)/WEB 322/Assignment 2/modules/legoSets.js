@@ -62,7 +62,7 @@ const legoSets = require("./legoSets");
 legoSets.initialize();
 
 const setAll = legoSets.getAllSets();
-const specificSet = legoSets.getSetByNum("001-1");
+const specificSet = legoSets.getSetByNum("0012-1");
 const setsByTheme = legoSets.getSetsByTheme("tech");
 
 console.log(setAll);
