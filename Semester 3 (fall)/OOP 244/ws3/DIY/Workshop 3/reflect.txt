@@ -1,0 +1,11 @@
+I have gained a significant understanding of object-oriented programming concepts and practices through the successful completion of this workshop. The learning outcomes achieved during this workshop have equipped me with valuable skills that will be instrumental in my future endeavours in software development.
+
+First and foremost, I have learned how to define a class type. This foundational concept of object-oriented programming is the building block for creating complex data structures and organizing code efficiently. Understanding how to define classes enables me to encapsulate data and functionality effectively, promoting code reusability and maintainability.
+
+Furthermore, the workshop has taught me the importance of data privatization within a class type. By encapsulating data within a class and controlling access through member functions, I can ensure data integrity and security while providing a straightforward interface for external interactions.
+
+The ability to instantiate objects of class type is a fundamental skill that enables me to create instances of my defined classes. It allows me to work with multiple entities, each with its state and behaviour, which is crucial for modelling real-world systems in software.
+
+Using member functions to query and modify the state of an object is a powerful concept that enhances the modularity and comprehensibility of code. I can now design classes with well-defined methods that facilitate easy manipulation of object data while adhering to the principles of encapsulation.
+
+Additionally, I have learned how to leverage standard library facilities to format data inserted into the output stream. This skill is essential for creating user-friendly and informative program outputs, enhancing the user experience.

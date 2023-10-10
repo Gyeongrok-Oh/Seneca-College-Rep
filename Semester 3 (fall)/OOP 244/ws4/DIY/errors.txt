@@ -1,0 +1,4 @@
+Label.cpp: In constructor ‘sdds::Label::Label(const char*, const char*)’:
+Label.cpp:30:24: error: ‘strCpy’ was not declared in this scope
+    strCpy(cont, content);
+                        ^
