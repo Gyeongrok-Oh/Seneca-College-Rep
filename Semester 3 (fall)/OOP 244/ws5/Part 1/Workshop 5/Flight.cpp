@@ -10,6 +10,13 @@
 // -----------------------------------------------------------
 // Name                 Date            Reason
 ***********************************************************************/
+//==============================================
+// Name:           Gyeongrok oh
+// Student Number: 119140226
+// Email:          goh3@myseneca.ca
+// Section:        NAA
+// date:           Oct 12 2023
+//==============================================
 #define _CRT_SECURE_NO_WARNINGS
 #include <cstring>
 #include "Flight.h"

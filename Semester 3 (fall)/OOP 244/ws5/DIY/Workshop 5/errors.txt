@@ -1,0 +1,4 @@
+Portfolio.cpp: In constructor ‘sdds::Portfolio::Portfolio(double, const char*, char)’:
+Portfolio.cpp:36:34: error: ‘strcpy’ was not declared in this scope
+             strcpy(m_stock, stock);
+                                  ^

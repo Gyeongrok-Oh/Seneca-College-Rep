@@ -4,6 +4,7 @@
   "description": "Web 322 assignment 2",
   "main": "server.js",
   "scripts": {
+    "tw:build": "tailwindcss build -i ./public/css/tailwind.css -o ./public/css/main.css",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
@@ -18,6 +19,11 @@
   },
   "homepage": "https://github.com/Gyeongrok-Oh/Seneca-College-Rep#readme",
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.10",
+    "daisyui": "^3.9.2",
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
   }
 }
