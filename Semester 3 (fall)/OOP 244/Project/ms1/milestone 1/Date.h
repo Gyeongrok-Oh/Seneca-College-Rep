@@ -1,0 +1,33 @@
+#ifndef SDDS_DATE_H_
+#define SDDS_Date_H_
+#include "Status.h"
+
+namespace sdds {
+	const int max_year = 2030;
+	class Date {
+		int year{};
+		int month{};
+		int day{};
+		Status* State{nullptr};
+		bool Formatted{true};
+		bool validate();
+		int intVal() const;
+	public:
+		Date();
+		Date(const int get_year, const int get_month, const int get_day);
+		bool operator!=(const Date D)const;
+		bool operator==(const Date D)const;
+		bool operator<=(const Date D)const;
+		bool operator<(const Date D)const;
+		bool operator>=(const Date D)const;
+		bool operator>(const Date D)const;
+		const Status& state()const;
+		Date& formatted(bool is_format);
+		std::ostream& write(std::ostream& os) const;
+		std::istream& read(std::istream& is);
+		//helper function
+		friend std::ostream& operator<<(std::ostream& os, const Date& date);
+		friend std::istream& operator>>(std::istream& is, Date& date);
+	};
+};
+#endif
