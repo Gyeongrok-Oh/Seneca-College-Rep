@@ -134,6 +134,7 @@
   <ItemGroup>
     <ClCompile Include="Date.cpp" />
     <ClCompile Include="DateTester.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Status.cpp" />
     <ClCompile Include="StatusTester.cpp" />
     <ClCompile Include="Utils.cpp" />

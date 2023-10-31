@@ -1,0 +1,7 @@
+Date.cpp: In member function ‘std::istream& sdds::Date::read(std::istream&)’:
+Date.cpp:198:9: error: request for member ‘description’ in ‘((sdds::Date*)this)->sdds::Date::State’, which is of pointer type ‘sdds::Status*’ (maybe you meant to use ‘->’ ?)
+   State.description = new char()
+         ^
+Date.cpp:199:3: error: expected ‘;’ before ‘init’
+   init();
+   ^

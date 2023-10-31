@@ -13,6 +13,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <ctime>
+#include <cstring>
 #include "Utils.h"
 using namespace std;
 namespace sdds {
@@ -42,8 +43,10 @@ namespace sdds {
     //optional functions
     void Utils::alocpy(char*& destination, const char* source)
     {
-        delete[] destination;
-        destination = nullptr;
+        if (destination != nullptr) {
+            delete[] destination;
+            destination = nullptr;
+        }
 
         if (!(source[0] == 0 && source == nullptr)) {
             destination = new char[strlen(source) + 1];

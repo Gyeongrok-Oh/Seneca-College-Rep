@@ -6,7 +6,7 @@ Version 1.0
 Author	Gyeongrok oh
 Revision History
 -----------------------------------------------------------
-Date      
+Date      Oct 31, 2023
 -----------------------------------------------------------
 I have done all the coding by myself and only copied the code
 that my professor provided to complete my workshops and assignments.
@@ -29,18 +29,19 @@ namespace sdds {
 	}
 	Status::Status(char* desc)
 	{
-		if (desc[0] != 0 && desc != nullptr) {
+		setEmpty(); // Initialize to a safe state
+		if (desc != nullptr && desc[0] != 0) {
 			ut.alocpy(description, desc);
-			Status s = 0;
-		}
-		else {
-			setEmpty();
 		}
 	}
 	void Status::setEmpty()
 	{
-		description = nullptr;
+		if (description != nullptr) {
+			delete[] description; // Free previously allocated memory
+			description = nullptr;
+		}
 		code = 0;
+
 	}
 	Status::operator bool() const
 	{
@@ -48,19 +49,21 @@ namespace sdds {
 	}
 	Status& Status::operator=(const char* desc)
 	{
-		ut.alocpy(description, desc);
+		setEmpty(); // Clear the current state
+
+		if (desc != nullptr) {
+			ut.alocpy(description, desc);
+		}
 		return *this;
 	}
 	Status& Status::operator=(const int right)
 	{
-		this->code = right;
+		code = right;
 		return *this;
 	}
 	Status& Status::clear()
 	{
-		delete[] description;
-		description = nullptr;
-		code = 0;
+		setEmpty(); // Properly clear the object
 
 		return *this;
 	}

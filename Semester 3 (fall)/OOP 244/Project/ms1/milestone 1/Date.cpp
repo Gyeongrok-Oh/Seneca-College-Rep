@@ -1,3 +1,21 @@
+/* Citation and Sources...
+Final Project Milestone 1
+Module: Whatever
+Filename: Date.cpp
+Version 1.0
+Author	Gyeongrok oh
+Revision History
+-----------------------------------------------------------
+Date      2023/10/31
+-----------------------------------------------------------
+I have done all the coding by myself and only copied the code
+that my professor provided to complete my workshops and assignments.
+-----------------------------------------------------------
+OR
+-----------------------------------------------------------
+Write exactly which part of the code is given to you as help and
+who gave it to you, or from what source you acquired it.
+-----------------------------------------------------------*/
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include "Date.h"
@@ -11,7 +29,7 @@ namespace sdds {
 		
 		int currentYear{};
 
-		ut.getSystemDate(&currentYear,NULL,NULL);
+		ut.getSystemDate(&currentYear,nullptr,nullptr);
 
 		if (year < currentYear || year > max_year) {
 			State->clear();
@@ -23,7 +41,7 @@ namespace sdds {
 			*State = "Invalid month in date";
 			*State = 2;
 		}
-		else if (day < 1 || day > 12) {
+		else if (day < 1 || day > ut.daysOfMon(month,year)) {
 			State->clear();
 			*State = "Invalid day in date";
 			*State = 3;
@@ -48,10 +66,7 @@ namespace sdds {
 		day = get_day;
 
 		if (!validate()) {
-			year = 0;
-			month = 0;
-			day = 0;
-			//Processing invalid dates
+			init();
 		}
 	}
 	bool Date::operator!=(const Date D) const
@@ -174,31 +189,87 @@ namespace sdds {
 	{
 		int getInt{};
 
-		if (State == nullptr) {
-			State = new Status(); // Allocate memory for State if it's nullptr
-		}
+		init();
+
+		State = new Status;
 
 		if (!(is >> getInt) || (is.peek() != '\n') || getInt < 0) {
 			State->clear();
 			*State = "Invalid date value";
 		}
 		else {
+			//Exception handling
 			ut.testMode(false);
-			if (getInt == 0 || (getInt > 31 && getInt < 100)) { // two digit integer and invlaid day
-				ut.getSystemDate(&year, &month, NULL);
+			if (getInt == 0 || (getInt > 31 && getInt < 100)) { // Invalid state: not provided year and month, invalid day 
+				ut.getSystemDate(&year, &month, nullptr);
 				day = getInt;
-				if (!validate()) {
-					is.istream::setstate(ios::badbit);
+			}
+			else if (getInt >= 1 && getInt < 10000) {
+				ut.getSystemDate(&year, nullptr, nullptr);
+				if (getInt >= 1 && getInt <= 31) { // invalid DD->Day
+					day = getInt;
+				}
+				else if (getInt > 99 && getInt < 1000) { // 3 integer value Examples(MM/DD) : 121 -> 2023(current year)/01/12, invalid : 141 -> 2023(current year)/01/41 "Invalid day"
+					month = getInt / 100;
+
+					if ((getInt % 100) >= 1 && (getInt % 100) <= ut.daysOfMon(month, year)) {
+						day = getInt % 100;
+					}
+
+				}
+				else {
+					if ((getInt / 100) >= 1 && (getInt / 100) <= 12) { // getInt > 999 && getInt < 10000-> 4 digit
+						month = getInt / 100;
+						if ((getInt % 100) >= 1 && (getInt % 100) <= ut.daysOfMon(month, year)) {
+							day = getInt % 100;
+						}
+					}
 				}
 			}
-			else if (getInt >= 1 && getInt <= 12) {
-				ut.getSystemDate(&year, NULL, NULL);
+			else if (getInt > 9999 && getInt < 100000) { // invalid year: Example: 11212 -> 2001/12/12 -> already less than current year(2023)
+				// do nothing
+			}
+			else if (getInt > 99999 && getInt < 1000000) {  // 6 digit
+				year = 2000 + (getInt / 10000);
+				 
+				getInt -= (getInt / 10000) * 10000;
+				if ((getInt / 100) >= 1 && (getInt / 100) <= 12) {
+					month = getInt / 100;
+					if ((getInt % 100) >= 1 && (getInt % 100) <= ut.daysOfMon(month, year)) {
+						day = getInt % 100;
+					}
+				}
+			}
+			else {
+				cout << "You Entered: " << getInt << " is too low or much" << endl; // less than 0 or more than 6 digit
+			}
+
+			if (!validate()) {
+				is.istream::setstate(ios::badbit);
 			}
 		}
 
 
 		return is;
 	}
+
+	void Date::init()
+	{
+		year = 0;
+		month = 0;
+		day = 0;
+		if (State != nullptr) {
+			State->setEmpty();
+			delete State;
+			State = nullptr;
+		}
+	}
+
+	Date::~Date()
+	{
+		init();
+	}
+
 
 	ostream& operator<<(std::ostream& os, const Date& date)
 	{
@@ -209,5 +280,4 @@ namespace sdds {
 	{
 		return date.read(is);
 	}
-
 }
