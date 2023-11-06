@@ -1,15 +1,14 @@
 [
-    {
-      "id": "4",
-      "name": "Technic"
-    },
-    {
-      "id": "50",
-      "name": "Classic Town"
-    },
-    {
-        "id": "366",
-        "name": "Technic"
-    }
-  ]
-  
+  {
+    "id": "143",
+    "name": "Technic"
+  },
+  {
+    "id": "371",
+    "name": "Classic Town"
+  },
+  {
+      "id": "366",
+      "name": "Bionicle"
+  }
+]

@@ -23,7 +23,7 @@ function getAllSets() {
     if (sets.length > 0) {
       resolve(sets);
     } else {
-      reject("sets no available");
+      reject("Sets not available");
     }
   });
 }
@@ -35,12 +35,11 @@ function getSetByNum(setNum) {
     if (foundSet) {
       resolve(foundSet);
     } else {
-      reject("getSetByNum is not found");
+      reject("Set not found");
     }
   });
 }
 
-// Get sets by theme (case-insensitive and partial match)
 function getSetsByTheme(theme) {
   return new Promise((resolve, reject) => {
     const filteredSets = sets.filter(set =>
@@ -54,17 +53,11 @@ function getSetsByTheme(theme) {
   });
 }
 
+
+
+
+
+
 module.exports = { initialize, getAllSets, getSetByNum, getSetsByTheme };
 
 
-const legoSets = require("./legoSets");
-
-legoSets.initialize();
-
-const setAll = legoSets.getAllSets();
-const specificSet = legoSets.getSetByNum("0012-1");
-const setsByTheme = legoSets.getSetsByTheme("tech");
-
-console.log(setAll);
-console.log(specificSet);
-console.log(setsByTheme);
