@@ -1,11 +1,21 @@
-//==============================================
-// Name:           Jungjoo Kim
-// Student Number: 162 641 195
-// Email:          jkim594@myseneca.ca
-// Section:        NCC
-// Workshop:       Workshop2_DIY
-//==============================================
-// cstring.h
+/* Citation and Sources...
+Workshop 6
+Module: Whatever
+Filename: string.h
+Version 1.0
+Author	Gyeongrok oh
+Revision History
+-----------------------------------------------------------
+Date      Nov 2,2023
+-----------------------------------------------------------
+I have done all the coding by myself and only copied the code
+that my professor provided to complete my workshops and assignments.
+-----------------------------------------------------------
+OR
+-----------------------------------------------------------
+Write exactly which part of the code is given to you as help and
+who gave it to you, or from what source you acquired it.
+-----------------------------------------------------------*/
 
 #ifndef SDDS_CSTRING_H
 #define SDDS_CSTRING_H

@@ -129,9 +129,11 @@
   <ItemGroup>
     <ClCompile Include="HealthCard.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HealthCard.h" />
+    <ClInclude Include="Utils.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="HealthCardInfo.csv" />

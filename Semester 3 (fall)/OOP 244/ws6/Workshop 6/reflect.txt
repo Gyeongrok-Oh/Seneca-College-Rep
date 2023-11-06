@@ -1,0 +1,8 @@
+
+Throughout this workshop, the in-depth exploration of C++ concepts has been immensely beneficial. Studying constructors, the Rule of Three, input/output streams, and operator overloading has significantly enriched my understanding of advanced programming paradigms.
+
+One of the most rewarding aspects was creating a custom library header file akin to 'strlen' in C. Crafting a header file to mimic the functionality of 'strlen' involved understanding string manipulation at a fundamental level, consolidating my knowledge of pointers, character arrays, and string termination. Implementing this functionality from scratch was a challenging yet gratifying exercise that deepened my comprehension of low-level string operations.
+
+The practical exercises, especially the design and implementation of this custom library, served as a capstone to the workshop. It not only validated my understanding of the discussed concepts but also honed my problem-solving skills and boosted my confidence in working with complex programming tasks.
+
+Overall, the workshop has been a catalyst for my growth in C++. The combination of theoretical insights and practical implementations, including the development of a custom library header, has provided a solid foundation to tackle more intricate programming challenges and expand my capabilities in software development.
