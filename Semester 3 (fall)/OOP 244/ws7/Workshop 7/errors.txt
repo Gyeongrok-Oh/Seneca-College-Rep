@@ -1,0 +1,7 @@
+Utils.cpp: In member function ‘void sdds::Utils::alocpy(char*&, const char*)’:
+Utils.cpp:51:49: error: ‘strlen’ was not declared in this scope
+             destination = new char[strlen(source) + 1];
+                                                 ^
+Utils.cpp:52:39: error: ‘strcpy’ was not declared in this scope
+             strcpy(destination, source);
+                                       ^
