@@ -1,0 +1,127 @@
+Script started on Sat 11 Nov 2023 11:17:22 AM EST
+==66876== Memcheck, a memory error detector
+==66876== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==66876== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==66876== Command: ms
+==66876== 
+Enter the following values: 
+abc
+1111
+44444
+Blanket
+abc
+222222
+22
+abc
+222
+2
+abc
+22222222
+22.22
+------------------------
+SKU: abc
+Invalid Integer, retry: 1111
+Value out of range [40000<=val<=99999]: 44444
+AMA Item:
+SKU: 44444
+Description: Blanket
+Quantity Needed: abc
+Invalid Integer, retry: 222222
+Value out of range [1<=val<=9999]: 22
+Quantity On Hand: abc
+Invalid Integer, retry: 222
+Value out of range [0<=val<=22]: 2
+Unit Price: $abc
+Invalid number, retry: 22222222
+Value out of range [0.00<=val<=9999.00]: 22.22
+------------------------
+AMA Item:
+44444: Blanket
+Quantity Needed: 22
+Quantity Available: 2
+Unit Price: $22.22
+Needed Purchase Fund: $444.40
+------------------------
+44444 | Blanket                             |    2 |   22 |   22.22 |
+------------------------
+AMA Item:
+45678: Sleeping Bags
+Quantity Needed: 200
+Quantity Available: 100
+Unit Price: $65.66
+Needed Purchase Fund: $6566.00
+
+AMA Item:
+56789: Tents and Blankets and pillows Tents and Blankets and pillows Tents and Blankets and pillows Tents and Blankets and pillows Tents and Blankets and pillows Tents and Blankets and pillows Tents and Blankets and pillows Tents and Blankets and pillows Tents and Blankets and pillows Tents and Blankets and pillows Tents and Blankets and pillows 
+Quantity Needed: 2000
+Quantity Available: 134
+Unit Price: $165.99
+Needed Purchase Fund: $309737.34
+
+AMA Item:
+44444: Flash lights
+Quantity Needed: 400
+Quantity Available: 0
+Unit Price: $5.99
+Needed Purchase Fund: $2396.00
+
+AMA Item:
+44444: Blanket
+Quantity Needed: 22
+Quantity Available: 2
+Unit Price: $22.22
+Needed Purchase Fund: $444.40
+
+------------------------
+------------------------
+56789 | Tents and Blankets and pillows Tent |  129 | 2000 |  165.99 |
+Need: 2000
+Have: 129
+This object is in a good state!
+------------------------
+44444 | Flash lights                        |   10 |  400 |    5.99 |
+Need: 400
+Have: 10
+Price: 5.99
+------------------------
+44444 | Blanket                             |   12 |   22 |   22.22 |
+Need: 22
+Have: 12
+Price: 22.22
+------------------------
+44444 | Blanket                             |    7 |   22 |   22.22 |
+Need: 22
+Have: 7
+This object is in a good state!
+------------------------
+==66876== 
+==66876== HEAP SUMMARY:
+==66876==     in use at exit: 62 bytes in 2 blocks
+==66876==   total heap usage: 55 allocs, 53 frees, 119,510 bytes allocated
+==66876== 
+==66876== 31 bytes in 1 blocks are definitely lost in loss record 1 of 2
+==66876==    at 0x4C2AC38: operator new[](unsigned long) (vg_replace_malloc.c:433)
+==66876==    by 0x403604: sdds::Utils::alocpy(char*&, char const*) (Utils.cpp:55)
+==66876==    by 0x403241: sdds::Status::operator=(char const*) (Status.cpp:54)
+==66876==    by 0x402782: sdds::Item::load(std::basic_ifstream<char, std::char_traits<char> >&) (Item.cpp:118)
+==66876==    by 0x401A2B: descriptive() (main_prof.cpp:73)
+==66876==    by 0x40168B: main (main_prof.cpp:27)
+==66876== 
+==66876== 31 bytes in 1 blocks are definitely lost in loss record 2 of 2
+==66876==    at 0x4C2AC38: operator new[](unsigned long) (vg_replace_malloc.c:433)
+==66876==    by 0x403604: sdds::Utils::alocpy(char*&, char const*) (Utils.cpp:55)
+==66876==    by 0x403241: sdds::Status::operator=(char const*) (Status.cpp:54)
+==66876==    by 0x402782: sdds::Item::load(std::basic_ifstream<char, std::char_traits<char> >&) (Item.cpp:118)
+==66876==    by 0x401E12: linear() (main_prof.cpp:82)
+==66876==    by 0x4016AC: main (main_prof.cpp:29)
+==66876== 
+==66876== LEAK SUMMARY:
+==66876==    definitely lost: 62 bytes in 2 blocks
+==66876==    indirectly lost: 0 bytes in 0 blocks
+==66876==      possibly lost: 0 bytes in 0 blocks
+==66876==    still reachable: 0 bytes in 0 blocks
+==66876==         suppressed: 0 bytes in 0 blocks
+==66876== 
+==66876== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+
+Script done on Sat 11 Nov 2023 11:17:45 AM EST
