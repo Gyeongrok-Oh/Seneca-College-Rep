@@ -6,7 +6,7 @@ Version 1.0
 Author	Gyeongrok oh
 Revision History
 -----------------------------------------------------------
-Date      11/3/2023
+Date      11/10/2023
 -----------------------------------------------------------
 I have done all the coding by myself and only copied the code
 that my professor provided to complete my workshops and assignments.
@@ -25,7 +25,7 @@ who gave it to you, or from what source you acquired it.
 namespace sdds {
 	class Pack : public Container {
 		int m_size{};
-		int m_unitSize{}; // (example: 330 CC for a can of coke, or 250 CC for a bottle of water)
+		int m_unitSize{}; 
 		int m_noOfUnits{};
 
 	public:
