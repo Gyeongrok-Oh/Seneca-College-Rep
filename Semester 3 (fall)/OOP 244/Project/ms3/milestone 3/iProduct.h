@@ -1,5 +1,5 @@
 /***********************************************************************
-// Milestone 3
+// Final project Milestone 3
 // Module: iProduct
 // File: iProduct.h
 // Version 1.0
@@ -8,7 +8,7 @@
 //
 // Revision History
 // -----------------------------------------------------------
-// Name                 Date            Reason
+// Name Gyeongrok oh                Date 2023/Nov/13           Reason
 ***********************************************************************/
 #ifndef SDDS_IPRODUCT_H_
 #define SDDS_IPRODUCT_H_

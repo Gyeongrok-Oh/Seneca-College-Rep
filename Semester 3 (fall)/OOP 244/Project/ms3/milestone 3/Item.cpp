@@ -1,8 +1,20 @@
-
+/***********************************************************************
+// Final project Milestone 3
+// Module: Item
+// File: Item.cpp
+// Version 1.0
+// Author  Gyeongrok oh
+// Description
+//
+// Revision History
+// -----------------------------------------------------------
+// Name Gyeongrok oh                Date 2023/Nov/13           Reason
+***********************************************************************/
 #include <iostream>
+#include <fstream>
 #include <string>
 #include "Item.h"
-
+#include "Utils.h"
 using namespace std;
 
 namespace sdds {
@@ -79,7 +91,7 @@ namespace sdds {
 		delete[] m_description; 
 		m_description = nullptr; 
 		m_flag = false; 
-		s.clear(); // 메모리 해제
+		s.clear(); 
 		unitNum = 0;
 	}
 
@@ -97,7 +109,7 @@ namespace sdds {
 	{
 		if (*this) { 
 			of << '\n' << unitNum << '\t' << m_description << '\t' << m_quantity << '\t' << m_neededQuantity << '\t'; 
-			of.setf(std::ios::fixed); 
+			of.setf(ios::fixed); 
 			of.precision(2); 
 			of << m_price; 
 		}
@@ -105,10 +117,10 @@ namespace sdds {
 		return of;
 	}
 
-	std::ifstream& Item::load(std::ifstream& ifstr) {
+	ifstream& Item::load(ifstream& ifstr) {
 
 		clear();
-		std::string temp;
+		string temp;
 		ifstr >> unitNum;
 		ifstr.ignore();
 		getline(ifstr, temp, '\t');
@@ -132,15 +144,15 @@ namespace sdds {
 	}
 
 
-	std::ostream& Item::display(std::ostream& ostr) const {
+	ostream& Item::display(ostream& ostr) const {
 		if (*this) {
 			if (m_flag) {
 				ostr << unitNum << " | ";
 				ostr.width(35); 
-				ostr.setf(std::ios::left);
+				ostr.setf(ios::left);
 
 				if (m_description && strLen(m_description) > 35) {
-					std::string result = subStr(m_description, 0, 35);
+					string result = subStr(m_description, 0, 35);
 					strCpy(m_description, result.c_str());
 					ostr << m_description << " | ";
 				}
@@ -148,27 +160,27 @@ namespace sdds {
 					ostr << m_description << " | ";
 				}
 				
-				ostr.unsetf(std::ios::left); 
+				ostr.unsetf(ios::left); 
 				ostr.width(4); 
-				ostr.setf(std::ios::right); 
+				ostr.setf(ios::right); 
 				ostr << m_quantity << " | "; ostr.width(4); 
 				ostr << m_neededQuantity << " | ";
 				ostr.width(7); 
-				ostr.setf(std::ios::fixed); ostr.precision(2); ostr << m_price << " |"; ostr.unsetf(std::ios::right); ostr.unsetf(std::ios::fixed);
+				ostr.setf(ios::fixed); ostr.precision(2); ostr << m_price << " |"; ostr.unsetf(ios::right); ostr.unsetf(ios::fixed);
 			}
 			else { 
-				ostr << "AMA Item:" << std::endl; 
-				ostr << unitNum << ": " << m_description << std::endl;
-				ostr << "Quantity Needed: " << m_neededQuantity << std::endl;
-				ostr << "Quantity Available: " << m_quantity << std::endl; 
+				ostr << "AMA Item:" << endl; 
+				ostr << unitNum << ": " << m_description << endl;
+				ostr << "Quantity Needed: " << m_neededQuantity << endl;
+				ostr << "Quantity Available: " << m_quantity << endl; 
 				ostr << "Unit Price: $"; 
-				ostr.setf(std::ios::fixed); 
+				ostr.setf(ios::fixed); 
 				ostr.precision(2); 
-				ostr << m_price << std::endl; 
+				ostr << m_price << endl; 
 				ostr << "Needed Purchase Fund: $"; 
 				ostr.precision(2); 
 				double value = (m_neededQuantity - m_quantity) * m_price;
-				ostr << value << std::endl; 
+				ostr << value << endl; 
 			}
 		}
 		else { 
@@ -186,9 +198,7 @@ namespace sdds {
 		cout << "Description: "; 
 		getline(istr, temp, '\n'); 
 		if (temp != "") { 
-
 			ut.alocpy(m_description, temp.c_str());
-
 		}
 		
 		cout << "Quantity Needed: "; 
@@ -204,8 +214,8 @@ namespace sdds {
 		return istr;
 	}
 
-	int Item::readSku(std::istream& istr) { 
-		std::cout << "SKU: "; 
+	int Item::readSku(istream& istr) { 
+		cout << "SKU: "; 
 		unitNum = ut.getint(40000, 99999, "", "");
 		
 		return unitNum;

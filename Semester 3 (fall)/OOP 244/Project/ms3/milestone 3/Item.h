@@ -1,7 +1,15 @@
-#ifndef SDDS_ITEM_H_
-#define SDDS_ITEM_H_
-
-#include <fstream>
+/***********************************************************************
+// Final project Milestone 3
+// Module: Item
+// File: Item.h
+// Version 1.0
+// Author  Gyeongrok oh
+// Description
+//
+// Revision History
+// -----------------------------------------------------------
+// Name Gyeongrok oh                Date 2023/Nov/13           Reason
+***********************************************************************/
 #include "iProduct.h"
 #include "Status.h"
 namespace sdds {

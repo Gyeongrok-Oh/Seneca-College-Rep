@@ -1,6 +1,6 @@
 /* Citation and Sources...
 Final Project Milestone 1
-Module: Whatever
+Module: Status
 Filename: Status.h
 Version 1.0
 Author	Gyeongrok oh
@@ -35,7 +35,6 @@ namespace sdds {
 		Status& clear();
 		operator const char* () const;
 		operator int() const;
-		//helper function
 		friend std::ostream& operator<<(std::ostream& os, const Status s);
 	};
 }
