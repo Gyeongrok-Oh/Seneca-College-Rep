@@ -1,6 +1,6 @@
-#include <cstring>
 #include <string>
 #include "LblShape.h"
+#include "Utils.h"
 
 using namespace std;
 
@@ -13,8 +13,9 @@ namespace sdds {
 	LblShape::LblShape(const char* label)
 	{
 		if (label[0] != 0 && label != nullptr) {
-			m_label = new char[(strlen(label) + 1)];
-			strcpy(m_label, label);
+			delete[] m_label;
+			m_label = new char[(strLen(label) + 1)];
+			strCpy(m_label, label);
 		}
 	}
 
@@ -27,10 +28,10 @@ namespace sdds {
 	{
 		string userInput{};
 		getline(is, userInput, ',');
-
+		delete[] m_label;
 		const char * cString = userInput.c_str();
-		m_label = new char(strlen(cString) + 1);
-		strcpy(m_label, cString);
+		m_label = new char[strLen(cString) + 1];
+		strCpy(m_label, cString);
 	}
 
 }

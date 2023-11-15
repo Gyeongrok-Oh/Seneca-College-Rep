@@ -9,7 +9,7 @@ namespace sdds {
 	public:
 		virtual void draw(std::ostream& os) const = 0;
 		virtual void getSpecs(std::istream& is) = 0;
-		virtual ~Shape() = 0;
+		virtual ~Shape() = default;
 	};
 
 	std::ostream& operator<<(std::ostream& os, const Shape& shape);

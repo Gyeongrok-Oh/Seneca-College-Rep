@@ -4,6 +4,10 @@ using namespace std;
 
 namespace sdds {
 
+	void Shape::draw(std::ostream& os) const {}
+
+	void Shape::getSpecs(std::istream& is) {}
+
 	std::ostream& operator<<(std::ostream& os, const Shape& shape)
 	{
 		shape.draw(os);

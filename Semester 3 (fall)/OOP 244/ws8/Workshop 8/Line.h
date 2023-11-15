@@ -5,7 +5,7 @@
 
 namespace sdds {
 	class Line : public LblShape{
-		int m_length{ 0 };
+		int m_length{};
 	public:
 		Line();
 		Line(const char * label, int length);

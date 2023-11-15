@@ -1,0 +1,11 @@
+In file included from Rectangle.cpp:1:0:
+Rectangle.h: In constructor ‘sdds::Rectangle::Rectangle()’:
+Rectangle.h:9:16: warning: ‘sdds::Rectangle::m_height’ will be initialized after [-Wreorder]
+   int m_height{};
+                ^
+Rectangle.cpp:6:61: warning:   base ‘sdds::LblShape’ [-Wreorder]
+  Rectangle::Rectangle() : m_width(0), m_height(0), LblShape()
+                                                             ^
+Rectangle.cpp:6:2: warning:   when initialized here [-Wreorder]
+  Rectangle::Rectangle() : m_width(0), m_height(0), LblShape()
+  ^
