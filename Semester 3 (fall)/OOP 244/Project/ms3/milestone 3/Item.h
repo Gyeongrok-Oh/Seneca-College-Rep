@@ -1,17 +1,26 @@
-/***********************************************************************
-// Final project Milestone 3
-// Module: Item
-// File: Item.h
-// Version 1.0
-// Author  Gyeongrok oh
-// Description
-//
-// Revision History
-// -----------------------------------------------------------
-// Name Gyeongrok oh                Date 2023/Nov/13           Reason
-***********************************************************************/
+/* Citation and Sources...
+Final Project Milestone 1
+Module: Item
+Filename: Item.h
+Version 1.0
+Author	Gyeongrok oh
+Revision History
+-----------------------------------------------------------
+Date      Nov 18, 2023
+-----------------------------------------------------------
+I have done all the coding by myself and only copied the code
+that my professor provided to complete my workshops and assignments.
+-----------------------------------------------------------
+OR
+-----------------------------------------------------------
+Write exactly which part of the code is given to you as help and
+who gave it to you, or from what source you acquired it.
+-----------------------------------------------------------*/
+#ifndef SDDS_ITEM_H_
+#define SDDS_ITEM_H_
 #include "iProduct.h"
 #include "Status.h"
+
 namespace sdds {
 	class Item : public iProduct {
 		double m_price{};

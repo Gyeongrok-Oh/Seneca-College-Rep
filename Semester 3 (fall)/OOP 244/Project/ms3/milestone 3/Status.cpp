@@ -1,12 +1,12 @@
 /* Citation and Sources...
 Final Project Milestone 1
-Module: Whatever
+Module: Status
 Filename: Status.cpp
 Version 1.0
 Author	Gyeongrok oh
 Revision History
 -----------------------------------------------------------
-Date      Oct 31, 2023
+Date      Nov 18, 2023
 -----------------------------------------------------------
 I have done all the coding by myself and only copied the code
 that my professor provided to complete my workshops and assignments.
@@ -30,16 +30,13 @@ namespace sdds {
 	Status::Status(char* desc)
 	{
 		
-		if (desc != nullptr && desc[0] != 0) {
+		if (desc[0] != 0 && desc != nullptr) {
 			ut.alocpy(description, desc);
 		}
 	}
 	void Status::setEmpty()
 	{
-		if (description != nullptr) {
-			delete[] description;
-			description = nullptr; // Set to nullptr after deleting memory
-		}
+		delete[] description;
 		code = 0;
 	}
 
@@ -48,12 +45,12 @@ namespace sdds {
 		return (description == nullptr);
 	}
 	Status& Status::operator=(const char* desc) {
-		// Clear the current state
+
 		if (desc != nullptr) {
 			ut.alocpy(description, desc);
 		}
 		else {
-			// If desc is null or empty, set description to nullptr
+
 			description = nullptr;
 		}
 
@@ -68,7 +65,7 @@ namespace sdds {
 	}
 	Status& Status::clear()
 	{
-		setEmpty(); // Properly clear the object
+		setEmpty(); 
 
 		return *this;
 	}
