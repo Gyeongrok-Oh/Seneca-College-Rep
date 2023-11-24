@@ -25,18 +25,22 @@ using namespace std;
 namespace sdds {
 	Status::Status()
 	{
-		setEmpty();
+		description = nullptr;
+		code = 0;
 	}
 	Status::Status(char* desc)
 	{
-
 		if (desc[0] != 0 && desc != nullptr) {
 			ut.alocpy(description, desc);
 		}
+		code = 0; 
 	}
 	void Status::setEmpty()
 	{
-		delete[] description;
+		if (description != nullptr) {
+			delete[] description;
+			description = nullptr;
+		}
 		code = 0;
 	}
 
@@ -76,6 +80,16 @@ namespace sdds {
 	Status::operator int() const
 	{
 		return code;
+	}
+	Status& Status::operator=(const Status& other)
+	{
+		if (this != &other) {
+			if (description) {
+				ut.alocpy(description, other.description);
+			}
+			code = other.code;
+		}
+		return *this;
 	}
 	std::ostream& operator<<(std::ostream& os, const Status s) {
 		if (s.code) {

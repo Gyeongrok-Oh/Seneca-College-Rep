@@ -35,6 +35,7 @@ namespace sdds {
 		Status& clear();
 		operator const char* () const;
 		operator int() const;
+		Status& operator=(const Status& other);
 		friend std::ostream& operator<<(std::ostream& os, const Status s);
 	};
 }

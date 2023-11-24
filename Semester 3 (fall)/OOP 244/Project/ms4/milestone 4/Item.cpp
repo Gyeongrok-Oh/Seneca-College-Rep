@@ -41,6 +41,7 @@ namespace sdds {
 			m_price = item.m_price;
 			m_quantity = item.m_quantity;
 			m_neededQuantity = item.m_neededQuantity;
+			unitNum = item.unitNum;
 			ut.alocpy(m_description, item.m_description);
 		}
 
@@ -113,7 +114,7 @@ namespace sdds {
 
 	ofstream& Item::save(ofstream& of) const
 	{
-		if (*this) {
+		if (s) {
 			of << '\n' << unitNum << '\t' << m_description << '\t' << m_quantity << '\t' << m_neededQuantity << '\t';
 			of.setf(ios::fixed);
 			of.precision(2);
@@ -151,7 +152,7 @@ namespace sdds {
 
 
 	ostream& Item::display(ostream& ostr) const {
-		if (*this) {
+		if (s) {
 			if (m_flag) {
 				ostr << unitNum << " | ";
 				ostr.width(35);
@@ -163,6 +164,7 @@ namespace sdds {
 					ostr << m_description << " | ";
 				}
 				else {
+					ostr.unsetf(ios::right);
 					ostr << m_description << " | ";
 				}
 

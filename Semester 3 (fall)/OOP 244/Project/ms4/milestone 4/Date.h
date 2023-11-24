@@ -26,7 +26,7 @@ namespace sdds {
 		int year{};
 		int month{};
 		int day{};
-		Status* State{ nullptr };
+		Status State;
 		bool Formatted{ true };
 		bool validate();
 		int intVal() const;
@@ -43,8 +43,8 @@ namespace sdds {
 		Date& formatted(bool is_format);
 		std::ostream& write(std::ostream& os) const;
 		std::istream& read(std::istream& is);
-		void init(); // added
-		~Date();
+		void init(); 
+		Date& operator=(const Date& other);
 		//helper function
 		friend std::ostream& operator<<(std::ostream& os, const Date& date);
 		friend std::istream& operator>>(std::istream& is, Date& date);

@@ -33,6 +33,9 @@
     <ClCompile Include="iProduct.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Date.h">
@@ -53,5 +56,13 @@
     <ClInclude Include="iProduct.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data.dat">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="dataOriginal.dat">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

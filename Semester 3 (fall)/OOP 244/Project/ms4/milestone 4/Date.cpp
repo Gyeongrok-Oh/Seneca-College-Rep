@@ -31,20 +31,19 @@ namespace sdds {
 
 		ut.getSystemDate(&currentYear, nullptr, nullptr);
 
+		State.clear();
+
 		if (year < currentYear || year > max_year) {
-			State->clear();
-			*State = "Invalid year in date";
-			*State = 1;
+			State = "Invalid year in date";
+			State = 1;
 		}
 		else if (month < 1 || month > 12) {
-			State->clear();
-			*State = "Invalid month in date";
-			*State = 2;
+			State = "Invalid month in date";
+			State = 2;
 		}
 		else if (day < 1 || day > ut.daysOfMon(month, year)) {
-			State->clear();
-			*State = "Invalid day in date";
-			*State = 3;
+			State = "Invalid day in date";
+			State = 3;
 		}
 		else {
 			is_valid = true;
@@ -153,7 +152,7 @@ namespace sdds {
 
 	const Status& Date::state() const
 	{
-		return *State;
+		return State;
 	}
 
 	Date& Date::formatted(bool is_format)
@@ -182,6 +181,7 @@ namespace sdds {
 			os.width(2);
 			os << day;
 		}
+		os.fill(' ');
 		os.unsetf(ios::left);
 		return os;
 	}
@@ -189,13 +189,9 @@ namespace sdds {
 	{
 		int getInt{};
 
-		init();
-
-		State = new Status;
-
 		if (!(is >> getInt) || (is.peek() != '\n') || getInt < 0) {
-			State->clear();
-			*State = "Invalid date value";
+			State.clear();
+			State = "Invalid date value";
 		}
 		else {
 			//Exception handling
@@ -259,15 +255,23 @@ namespace sdds {
 		month = 0;
 		day = 0;
 		if (State != nullptr) {
-			State->setEmpty();
+			State.setEmpty();
 			delete State;
 			State = nullptr;
 		}
 	}
 
-	Date::~Date()
+	Date& Date::operator=(const Date& other)
 	{
-		init();
+		if (this != &other) {
+			year = other.year;
+			month = other.month;
+			day = other.day;
+			State = other.State;
+			Formatted = other.Formatted;
+		}
+
+		return *this;
 	}
 
 

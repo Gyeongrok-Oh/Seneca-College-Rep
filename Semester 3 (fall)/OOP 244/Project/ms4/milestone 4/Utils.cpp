@@ -44,7 +44,7 @@ namespace sdds {
     void Utils::alocpy(char*& destination, const char* source) {
         // Delete existing memory if any
         delete[] destination;
-
+        destination = nullptr;
         if (source && source[0] != 0) {
             // Allocates memory in the destination to the size of the source
             size_t len = strLen(source);
