@@ -1,0 +1,9 @@
+﻿  AidMan.cpp
+C:\Users\0kr36\Seneca-College-Rep\Semester 3 (fall)\OOP 244\Project\ms5\ms51\Milestone 5 1\AidMan.cpp(129,9): error C2664: 'char *sdds::strStr(const char *,const char *)': cannot convert argument 1 from 'sdds::iProduct' to 'const char *'
+C:\Users\0kr36\Seneca-College-Rep\Semester 3 (fall)\OOP 244\Project\ms5\ms51\Milestone 5 1\AidMan.cpp(129,16): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+C:\Users\0kr36\Seneca-College-Rep\Semester 3 (fall)\OOP 244\Project\ms5\ms51\Milestone 5 1\Utils.h(63,8): message : see declaration of 'sdds::strStr'
+C:\Users\0kr36\Seneca-College-Rep\Semester 3 (fall)\OOP 244\Project\ms5\ms51\Milestone 5 1\AidMan.cpp(129,9): message : while trying to match the argument list '(sdds::iProduct, const char *)'
+  Utils.cpp
+C:\Users\0kr36\Seneca-College-Rep\Semester 3 (fall)\OOP 244\Project\ms5\ms51\Milestone 5 1\Utils.cpp(260,31): error C2440: '=': cannot convert from 'const char *' to 'char *'
+C:\Users\0kr36\Seneca-College-Rep\Semester 3 (fall)\OOP 244\Project\ms5\ms51\Milestone 5 1\Utils.cpp(260,31): message : Conversion loses qualifiers
+  Generating Code...
