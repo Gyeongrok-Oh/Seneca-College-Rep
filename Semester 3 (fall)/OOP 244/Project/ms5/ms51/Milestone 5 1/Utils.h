@@ -60,7 +60,7 @@ namespace sdds {
 
 	// strStr: returns the address of first occurance of "str2" in "str1"
 	//         returns nullptr if no match is found
-	char* strStr(char* str1, char* str2);
+	const char* strStr(const char* str1, const char* str2);
 
 	// strCat: Concantinates "src" C-string to the end of "des"
 	void strCat(char* des, const char* src);

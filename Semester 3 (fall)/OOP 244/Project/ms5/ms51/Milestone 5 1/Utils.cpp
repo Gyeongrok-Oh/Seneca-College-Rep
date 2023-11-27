@@ -249,12 +249,12 @@ namespace sdds {
 
 
     // strStr: returns the address of first occurance of "str2" in "str1"
-    char* strStr(char* str1, char* str2) {
-        char* p1 = str1;
-        char* p2 = str2;
-        char* match = nullptr;
+    const char* strStr(const char* str1, const char* str2)
+    {
+        const char* p1 = str1;
+        const char* p2 = str2;
+        const char* match = nullptr;
         bool flag = true;
-
         while (*p1 && flag) {
             if (*p1 == *p2) {
                 match = match == nullptr ? p1 : match;
@@ -274,7 +274,6 @@ namespace sdds {
 
         return match; // Return match (nullptr if substring not found)
     }
-
 
     // strCat: Concantinates "src" C-string to the end of "des"
     void strCat(char* des, const char* src)

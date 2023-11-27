@@ -91,7 +91,7 @@ namespace sdds {
 
 	ifstream& Perishable::load(ifstream& ifstr)
 	{
-		delete[] instruction; // right
+		delete[] instruction; 
 		instruction = nullptr;
 		Item::load(ifstr);
 		string temp{ "" };
@@ -108,10 +108,6 @@ namespace sdds {
 		ifstr >> expDate;
 
 		ifstr.ignore();
-
-		if (ifstr.fail()) {
-			s = "Input file stream read (perishable) failed!";
-		}
 
 		return ifstr;
 	}

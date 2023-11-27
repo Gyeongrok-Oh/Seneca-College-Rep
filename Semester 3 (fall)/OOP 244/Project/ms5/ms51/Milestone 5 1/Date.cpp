@@ -189,7 +189,7 @@ namespace sdds {
 	{
 		int getInt{};
 
-		if (!(is >> getInt) || (is.peek() != '\n') || getInt < 0) {
+		if ((!(is >> getInt) && (is.peek() != '\n')) || getInt < 0) {
 			State.clear();
 			State = "Invalid date value";
 		}

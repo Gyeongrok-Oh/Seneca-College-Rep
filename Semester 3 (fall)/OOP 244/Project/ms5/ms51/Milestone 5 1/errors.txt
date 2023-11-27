@@ -1,0 +1,3 @@
+AidMan.cpp:269:18: error: definition of implicitly-declared ‘sdds::AidMan::~AidMan()’
+  AidMan::~AidMan()
+                  ^
