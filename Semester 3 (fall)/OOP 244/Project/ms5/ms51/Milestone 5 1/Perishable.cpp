@@ -77,6 +77,7 @@ namespace sdds {
 				of << instruction;
 			}
 
+
 			of << '\t';
 			Date temp;
 			temp = expDate;

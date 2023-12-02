@@ -115,7 +115,7 @@ namespace sdds {
 	ofstream& Item::save(ofstream& of) const
 	{
 		if (s) {
-			of << '\n' << unitNum << '\t' << m_description << '\t' << m_quantity << '\t' << m_neededQuantity << '\t';
+			of << unitNum << '\t' << m_description << '\t' << m_quantity << '\t' << m_neededQuantity << '\t';
 			of.setf(ios::fixed);
 			of.precision(2);
 			of << m_price;
@@ -126,7 +126,7 @@ namespace sdds {
 
 	ifstream& Item::load(ifstream& ifstr) {
 
-		clear();
+
 		string temp;
 		ifstr >> unitNum;
 		ifstr.ignore();
@@ -143,10 +143,6 @@ namespace sdds {
 		ifstr >> m_price;
 		ifstr.ignore();
 
-		if (!ifstr) {
-			s = "Input file stream read failed!";
-		}
-
 		return ifstr;
 	}
 
@@ -160,8 +156,8 @@ namespace sdds {
 
 				if (m_description && strLen(m_description) > 35) {
 					string result = subStr(m_description, 0, 35);
-					strCpy(m_description, result.c_str());
-					ostr << m_description << " | ";
+					//strCpy(m_description, result.c_str());
+					ostr << result << " | ";
 				}
 				else {
 					ostr.unsetf(ios::right);
@@ -227,5 +223,30 @@ namespace sdds {
 		unitNum = ut.getint(40000, 99999, "", "");
 
 		return unitNum;
+	}
+	ostream& Item::operator<<(ostream& ostr) const
+	{
+		display(ostr);
+		return ostr;
+	}
+
+	ofstream& Item::operator<<(ofstream& of)const {
+		of << unitNum << " | ";
+		of.width(35);
+		of.setf(ios::left);
+		of << m_description << " | ";
+		of.unsetf(ios::left);
+		of.setf(ios::right);
+		of.width(4);
+		of << m_quantity << " | ";
+		of.width(4);
+		of << m_neededQuantity << " | ";
+		of.width(7);
+		of.setf(ios::fixed);
+		of.precision(2);
+		of << m_price << " | ";
+		of.unsetf(ios::right);
+
+		return of;
 	}
 }

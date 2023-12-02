@@ -53,6 +53,8 @@ namespace sdds {
 		std::ostream& display(std::ostream& ostr) const override;
 		std::istream& read(std::istream& istr) override;
 		int readSku(std::istream& istr) override;
+		std::ostream& operator<<(std::ostream& ostr) const;
+		std::ofstream& operator<<(std::ofstream& of)const;
 	};
 }
 #endif

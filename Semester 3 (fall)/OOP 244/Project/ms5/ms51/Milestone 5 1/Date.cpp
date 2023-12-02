@@ -55,6 +55,7 @@ namespace sdds {
 		return year * 372 + month * 31 + day;
 	}
 	Date::Date() {
+		ut.testMode(true);
 		ut.getSystemDate(&year, &month, &day);
 	}
 
@@ -161,7 +162,7 @@ namespace sdds {
 		return *this;
 	}
 
-	ostream& Date::write(std::ostream& os) const
+	ostream& Date::write(ostream& os) const
 	{
 		if (Formatted) {
 			os << year << "/";
@@ -185,7 +186,7 @@ namespace sdds {
 		os.unsetf(ios::left);
 		return os;
 	}
-	std::istream& Date::read(std::istream& is)
+	istream& Date::read(istream& is)
 	{
 		int getInt{};
 
@@ -259,7 +260,7 @@ namespace sdds {
 			delete State;
 			State = nullptr;
 		}
-	}
+            	}
 
 	Date& Date::operator=(const Date& other)
 	{
@@ -275,12 +276,12 @@ namespace sdds {
 	}
 
 
-	ostream& operator<<(std::ostream& os, const Date& date)
+	ostream& operator<<(ostream& os, const Date& date)
 	{
 		return date.write(os);
 	}
 
-	std::istream& operator>>(std::istream& is, Date& date)
+	istream& operator>>(istream& is, Date& date)
 	{
 		return date.read(is);
 	}

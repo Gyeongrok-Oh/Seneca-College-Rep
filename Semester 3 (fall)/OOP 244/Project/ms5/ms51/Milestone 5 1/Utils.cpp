@@ -254,17 +254,21 @@ namespace sdds {
         const char* p1 = str1;
         const char* p2 = str2;
         const char* match = nullptr;
-        bool flag = true;
-        while (*p1 && flag) {
+
+        while (*p1) {
             if (*p1 == *p2) {
-                match = match == nullptr ? p1 : match;
+                if (match == nullptr) {
+                    match = p1;
+                }
                 p2++;
 
                 if (*p2 == '\0') {
-                    flag = false; // Substring found, exit the loop
+                    // Substring found, exit the loop
+                    return match;
                 }
             }
             else {
+                // Reset to the beginning of str2
                 p2 = str2;
                 match = nullptr;
             }
@@ -272,8 +276,9 @@ namespace sdds {
             p1++;
         }
 
-        return match; // Return match (nullptr if substring not found)
+        return nullptr; // Substring not found
     }
+
 
     // strCat: Concantinates "src" C-string to the end of "des"
     void strCat(char* des, const char* src)

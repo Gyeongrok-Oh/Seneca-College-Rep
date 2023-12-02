@@ -8,7 +8,7 @@
 //
 // Revision History
 // -----------------------------------------------------------
-// Name   Gyeongrok oh          Date Nov-26-2023            Reason
+// Name   Gyeongrok oh          Date Nov-28-2023            Reason
 ***********************************************************************/
 #ifndef SDDS_AIDMAN_H_
 #define SDDS_AIDMAN_H_
@@ -39,6 +39,13 @@ namespace sdds {
 		void run();
 		int list(const char* sub_desc = nullptr);
 		~AidMan();
+		int search(int sku) const;
+		void addItem();
+		void remove(int index);
+		void removeItem();
+		void update();
+		void sort();
+		void shipItem();
 	};
 
 }

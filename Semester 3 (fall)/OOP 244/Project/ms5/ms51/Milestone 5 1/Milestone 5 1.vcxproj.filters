@@ -18,7 +18,7 @@
     <ClCompile Include="AidMan.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main51.cpp">
+    <ClCompile Include="main56.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Utils.cpp">
@@ -70,7 +70,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="data51.dat">
+    <None Include="data56.dat">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

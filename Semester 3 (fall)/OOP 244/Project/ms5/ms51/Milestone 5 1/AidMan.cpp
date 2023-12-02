@@ -8,7 +8,7 @@
 //
 // Revision History
 // -----------------------------------------------------------
-// Name   Gyeongrok oh          Date Nov-26-2023            Reason
+// Name   Gyeongrok oh          Date Nov-30-2023            Reason
 ***********************************************************************/
 #include <iostream>
 #include <string>
@@ -82,29 +82,53 @@ namespace sdds {
 				}
 				break;
 			case 2:
-				std::cout << "\n****Add Item****\n\n"; 
+				if (m_fileName == nullptr) {
+					cout << "\n****New/Open Aid Database****\n";
+					load();
+				}
+				else {
+					std::cout << "\n****Add Item****\n";
+					addItem();
+				}
 				break;
 			case 3:
-				std::cout << "\n****Remove Item****\n\n"; 
+				if (m_fileName == nullptr) {
+					cout << "\n****New/Open Aid Database****\n";
+					load();
+				}
+				else {
+					cout << "\n****Remove Item****\n";
+					removeItem();
+				}
 				break;
 			case 4:
-				cout << "\n****Update Quantity****\n\n";
+				if (m_fileName == nullptr) {
+					cout << "\n****New/Open Aid Database****\n";
+					load();
+				}
+				else {
+					cout << "\n****Update Quantity****\n";
+					update();
+				}
 				break;
 			case 5:
-				cout << "\n****Sort****\n\n";
+				cout << "\n****Sort****\n";
+				sort();
 				break;
 			case 6:
-				cout << "\n****Ship Items****\n\n";
+				cout << "\n****Ship Items****\n";
+				shipItem();
 				break;
 			case 7:
-				cout << "\n****New/Open Aid Database****\n\n";
+				cout << "\n****New/Open Aid Database****\n";
+				load();
 				break;
 			default:
-				std::cout << "Invalid option selected.\n";
+				cout << "Invalid option selected.\n";
 				break;
 			}
 		}
-		delete[] m_fileName;
+		save();
 	}
 
 	void AidMan::save()
@@ -112,7 +136,9 @@ namespace sdds {
 		if (m_fileName != nullptr) {
 			ofstream fout(m_fileName);
 			for (int i = 0; i < numItem; i++) {
-				items[i]->save(fout);
+
+				items[i]->save(fout) << endl;;
+
 			}
 			fout.close();
 		}
@@ -122,6 +148,9 @@ namespace sdds {
 	{
 		for (int i = 0; i < numItem; i++) {
 			delete items[i];
+		}
+		if (m_fileName != nullptr) {
+			delete[] m_fileName;
 		}
 		numItem = 0;
 	}
@@ -138,7 +167,6 @@ namespace sdds {
 			tempName[i] = cin.get(); 
 			i += 1; 
 		}; 
-		cin.ignore(); 
 		ut.alocpy(m_fileName, tempName); 
 		int noOfRecords = 0;
 		ifstream f(m_fileName);
@@ -211,26 +239,49 @@ namespace sdds {
 				}
 
 				cout << "-----+-------+-------------------------------------+------+------+---------+-----------" << endl;
+
+
+				cout << "Enter row number to display details or <ENTER> to continue:" << endl;
+				cout << "> ";
+				cin.get();
+				if (cin.peek() == '\n') {
+					cin.ignore();
+					cout << endl;
+				}
+				else {
+					int option = ut.getint(1, numItem, "", "");
+					items[tempIndex[option - 1]]->linear(false);
+					items[tempIndex[option - 1]]->display(cout);
+					cout << endl << endl;
+				}
 			}
 			else {
 				cout << "The list is empty!" << endl;
 			}
 		}
-
-
-		cout << "Enter row number to display details or <ENTER> to continue:" << endl;
-		cout << "> ";
-		cin.get();
-		if (cin.peek() == '\n') {
-			cin.ignore();
-			cout << endl;
-		}
 		else {
-			int option = ut.getint(1, numItem, "","");
-			items[tempIndex[option - 1]]->linear(false);
-			items[tempIndex[option - 1]]->display(cout);
-			cout << endl << endl;
+			if (numItem > 0) {
+				cout << " ROW |  SKU  | Description                         | Have | Need |  Price  | Expiry" << endl;
+				cout << "-----+-------+-------------------------------------+------+------+---------+-----------" << endl;
+					for (int i = 0; i < numItem; i++) {
+						if (*(items[i]) == str) {
+							cout << " ";
+							cout.fill(' ');
+							cout.width(3);
+							cout << i + 1 << " | ";
+							items[i]->linear(true);
+
+							items[i]->display(cout);
+							cout << endl;
+							tempIndex[i] = i;
+						}
+					}
+
+				cout << "-----+-------+-------------------------------------+------+------+---------+-----------" << endl;
+			
+			}
 		}
+
 
 		return numItem;
 	}
@@ -240,5 +291,201 @@ namespace sdds {
 		deallocate();
 	}
 
+	int AidMan::search(int sku) const
+	{
+		int index{-1};
 
+		for (int i = 0; i < numItem; i++) {
+			if (*(items[i]) == sku) {
+				index = i;
+				i = numItem;
+			}
+		}
+		return index;
+	}
+
+	void AidMan::addItem()
+	{
+		if (numItem >= sdds_max_num_items) {
+			cout << "Database full!" << endl;
+		}
+		else {
+			cout << "1- Perishable" << endl;
+			cout << "2- Non-Perishable" << endl;
+			cout << "-----------------" << endl;
+			cout << "0- Exit" << endl;
+			int choice{-1};
+			cout << "> ";
+			cin >> choice;
+
+			if (choice == 0) {
+				cout << "Aborted\n";
+			}
+			else {
+				if (choice == 1) {
+					items[numItem] = new Perishable;
+				}
+				else if (choice == 2) {
+					items[numItem] = new Item;
+				}
+				int sku{ -1 };
+				sku = items[numItem]->readSku(cin);
+
+				int index = search(sku);
+
+				if (index != -1) {
+					cout << "Sku: " << sku << " is already in the system, try updating quantity instead.\n";
+					delete items[numItem];
+				}
+				else {
+					items[numItem]->read(cin);
+					numItem++;
+				}
+			}
+			cout << endl;
+		}
+	}
+
+	void AidMan::remove(int index)
+	{
+		delete items[index];
+		items[index] = nullptr;
+
+		for (int i = index; i < numItem; i++) {
+			items[i] = items[i + 1];
+		}
+
+		numItem--;
+	}
+
+
+	void AidMan::removeItem() {
+		string desc = "";
+		cout << "Item description: ";
+		cin.ignore();
+		getline(cin,desc,'\n');
+		list(desc.c_str());
+		cout << "Enter SKU: ";
+		int sku = ut.getint("");
+		int found = search(sku);
+		if (found == -1) {
+			cout << "SKU not found!" << endl;
+		}
+		else {
+			cout << "Following item will be removed: " << endl;
+			items[found]->linear(false);
+			items[found]->display(cout);
+			cout << endl << "Are you sure?" << endl;
+			cout << "1- Yes!" << endl;
+			cout << "0- Exit" << endl;
+			cout << "> ";
+			int choice{ -1 };
+			cin >> choice;
+
+			if (choice) {
+				remove(found);
+				cout << "Item removed!" << endl <<endl;
+			}
+			else {
+				cout << "Aborted!" << endl << endl;
+			}
+		}
+
+	}
+
+	void AidMan::update()
+	{
+		string item = "";
+		cout << "Item description: ";
+		cin.ignore();
+		getline(cin,item,'\n');
+		list(item.c_str());
+		cout << "Enter SKU: ";
+		int sku = ut.getint("");
+		int found = search(sku);
+		if (found == -1) {
+			cout << "SKU not found!\n";
+		}
+		else {
+			cout << "1- Add\n"
+				"2- Reduce\n"
+				"0- Exit" << endl;
+			cout << "> ";
+			int choice{ -1 };
+			cin >> choice;
+			int quantity{ -1 };
+			if (choice == 0) {
+				cout << "Aborted!\n\n";
+			}
+			else {
+				if (choice == 1) {
+					if (items[found]->qty() < items[found]->qtyNeeded()) {
+						cout << "Quantity to add: ";
+						quantity = ut.getint(1, items[found]->qtyNeeded(), "", "");
+						*items[found] += quantity;
+						cout << quantity << " items added!" << endl << endl;
+					}
+					else {
+						cout << "Quantity Needed already fulfilled!\n\n";
+					}
+				}
+				else if (choice == 2){
+					if (items[found]->qty() > 0) {
+						cout << "Quantity to reduce: ";
+						quantity = ut.getint(1, items[found]->qty(), "", "");
+						*items[found] -= quantity;
+						cout << quantity << " items removed!\n\n";
+					}
+					else {
+						cout << "Quantity on hand is zero!\n";
+					}
+
+				}
+			}
+		}
+	}
+
+	void AidMan::sort()
+	{
+		iProduct* item = nullptr;
+		for (int i = 0; i < numItem - 1; i++) {
+			for (int j = i + 1; j < numItem; j++) {
+				if ((items[i]->qtyNeeded() - items[i]->qty()) < ((items[j]->qtyNeeded() - items[j]->qty()))) {
+					item = items[i];
+					items[i] = items[j];
+					items[j] = item;
+				}
+			}
+		}
+
+		cout << "Sort completed!" << endl << endl;
+	}
+	void AidMan::shipItem()
+	{
+		Date D;
+		ofstream of("shippingOrder.txt");
+		of << "Shipping Order, Date: " << D << endl;
+
+		of << " ROW |  SKU  | Description                         | Have | Need |  Price  | Expiry" << endl;
+		of << "-----+-------+-------------------------------------+------+------+---------+-----------" << endl;
+
+		int noOfRemove{ 0 };
+
+		for (int i = 0; i < numItem; i++) {
+			if (items[i]->qty() == items[i]->qtyNeeded()) {
+				items[i]->linear(true);
+				of.fill(' ');
+				of.width(4);
+				of << noOfRemove + 1 << " | ";
+				of << *items[i];
+				of << endl;
+				noOfRemove += 1;
+				remove(i);
+			}
+		}
+		
+		of << "-----+-------+-------------------------------------+------+------+---------+-----------" << endl;
+		cout << "Shipping Order for ";
+		cout << noOfRemove << " times saved!" << endl << endl;
+	}
 }
