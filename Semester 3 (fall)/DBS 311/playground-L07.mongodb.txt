@@ -1,0 +1,169 @@
+
+// ***********************
+// Name: Gyeongrok oh
+// ID: 119140226
+// Date: Dec 13,2023
+// Purpose: Lab 6 DBS301
+// ***********************
+
+// Q1
+// Part 1
+db.student.insertOne({
+    first_name: "Sarah",
+    last_name: "Stone",
+    email: "s_stone@email.com",
+    city: "Markham",
+    status: "full-time",
+    gpa: 3.2,
+    program: "CPA"
+  });
+
+  // Part 2
+db.student.insertOne({
+   first_name: "Gyeongrok",
+   last_name: "Oh",
+   email: "goh3@myseneca.ca",
+   city: "Newham",
+   status: "full-time",
+   gpa: 3.5,
+   program: "CPP"
+ });
+  
+// Q2
+// How many fields are in your document : 7 fields
+// Is there any new field added to your document : No
+
+// Q3
+// Find the document with the specified criteria
+db.student.find({
+    first_name: "Sarah",
+    last_name: "Stone"
+  });
+// Above output(Playground result):
+// [
+//     {
+//       "_id": {
+//         "$oid": "6557c6e52fda60e643dcf7c5"
+//       },
+//       "first_name": "Sarah",
+//       "last_name": "Stone",
+//       "email": "s_stone@email.com",
+//       "city": "Markham",
+//       "status": "full-time",
+//       "gpa": 3.2,
+//       "program": "CPA"
+//     }
+//   ] 
+
+db.student.deleteOne({
+    first_name: "Sarah",
+    last_name: "Stone"
+  });
+// // Above output(Playground result):
+// {
+//     "acknowledged": true,
+//     "deletedCount": 1
+// }
+
+// Q4
+db.student.find({
+    first_name: "Sarah",
+    last_name: "Stone"
+  });
+// Above output(Playground result):
+// []
+
+// Q5
+// Array definition
+const starry = [
+    {
+      _id: 10012,
+      first_name: "Sarah",
+      last_name: "Stone",
+      email: "s_stone@email.com",
+      city: "Toronto",
+      status: "full-time",
+      gpa: 3.4,
+      program: "CPA"
+    },
+    {
+      _id: 1002,
+      first_name: "Jack",
+      last_name: "Adam",
+      email: "j_adam@email.com",
+      city: "North York",
+      status: "part-time",
+      gpa: 3.6,
+      program: "CPA"
+    }
+  ];
+  
+
+  db.student.insertMany(starry);
+  
+  // Output message
+  print("Documents inserted successfully.");
+  
+// Above output :  Documents inserted successfully.
+// Playground result : undiefined
+
+// Q6
+db.student.find();
+// Above output(Playground result):
+// [
+//     {
+//       "_id": {
+//         "$oid": "655799d3d83a2c0a9af18ed7"
+//       },
+//       "first_name": "Gyeongrok",
+//       "last_name": "Oh",
+//       "email": "goh3@myseneca.ca",
+//       "city": "Newham",
+//       "status": "full-time",
+//       "gpa": 3.5,
+//       "program": "CPP"
+//     },
+//     {
+//       "_id": 10012,
+//       "first_name": "Sarah",
+//       "last_name": "Stone",
+//       "email": "s_stone@email.com",
+//       "city": "Toronto",
+//       "status": "full-time",
+//       "gpa": 3.4,
+//       "program": "CPA"
+//     },
+//     {
+//       "_id": 1002,
+//       "first_name": "Jack",
+//       "last_name": "Adam",
+//       "email": "j_adam@email.com",
+//       "city": "North York",
+//       "status": "part-time",
+//       "gpa": 3.6,
+//       "program": "CPA"
+//     }
+//   ]
+
+// Q7
+db.student.deleteMany({});
+// Above output(Playground result):
+// {
+//     "acknowledged": true,
+//     "deletedCount": 3
+//   }
+db.student.find();
+// Above output(Playground result):
+// []
+
+// Q8
+db.getName();
+// Above output(Playground result):
+// senecaLab07
+
+db.dropDatabase();
+// Above output(Playground result):
+//{
+//  "ok": 1,
+//  "dropped": "senecaLab07"
+//}

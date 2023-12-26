@@ -1,0 +1,41 @@
+// ***********************
+// Name: Gyeongrok oh
+// ID: 119140226
+// Date: Nov 27,2023
+// Purpose: Lab 8 DBS311
+// ***********************
+//Q1
+use('{inventory}')
+db.products.find({}, { name: 1, price: 1, _id: 0 })
+
+//Q2
+use('{inventory}')
+db.products.find({ type: "accessory" }, { name: 1, price: 1, _id: 0 })
+
+//Q3
+use('{inventory}')
+db.products.find({ price: { $gte: 13, $lte: 19 } }, { name: 1, price: 1, _id: 0 })
+
+//Q4
+use('{inventory}')
+db.products.find({ type: { $ne: "accessory" } }, { _id: 1, name: 1, price: 1, type: 1 })
+
+//Q5
+use('{inventory}')
+db.products.find({ type: { $in: ["accessory", "service"] } }, { _id: 1, name: 1, price: 1, type: 1 })
+
+//Q6
+use('{inventory}')
+db.products.find({ type: { $exists: true } }, { _id: 1, name: 1, price: 1, type: 1 })
+
+//Q7
+use('{inventory}')
+db.products.find({ type: { $all: ["accessory", "case"] } }, { _id: 1, name: 1, price: 1, type: 1 })
+
+//Q8
+
+// MongoDB is well-suited for flexible schemas and unstructured data, particularly in scenarios where there is a need for handling large amounts of data and horizontal scalability. These features prove beneficial in environments where the data structure undergoes frequent changes or in situations requiring a rapid development cycle.
+
+// However, it is challenging to assert that MongoDB is always the superior choice. Relational databases provide strict consistency and data integrity, making them suitable for complex transaction processing and normalized data structures. Therefore, in cases where maintaining data consistency or transaction processing is paramount, a relational database may be more suitable.
+
+// The most appropriate database selection heavily depends on the project's goals and requirements. Each database system excels in specific problem domains, and developers should consider the project's nature, data characteristics, scalability needs, as well as the team's experience and preferences when making the decision.
