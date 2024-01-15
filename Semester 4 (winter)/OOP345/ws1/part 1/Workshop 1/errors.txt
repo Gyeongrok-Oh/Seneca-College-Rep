@@ -1,0 +1,8 @@
+event.cpp: In member function ‘void seneca::Event::display() const’:
+event.cpp:22:18: warning: the address of ‘seneca::Event::desc’ will never be NULL [-Waddress]
+   22 |         if (desc != nullptr && desc[0] != '\0') {
+      |             ~~~~~^~~~~~~~~~
+In file included from event.cpp:2:
+event.h:12:14: note: ‘seneca::Event::desc’ declared here
+   12 |         char desc[129];
+      |              ^~~~

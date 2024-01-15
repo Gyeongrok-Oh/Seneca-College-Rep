@@ -1,0 +1,4 @@
+﻿  event.cpp
+C:\Users\0kr36\Seneca-College-Rep\Semester 4 (winter)\OOP345\ws1\part 1\Workshop 1\event.cpp(48,13): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  w1_p1.cpp
+  Generating Code...

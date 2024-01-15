@@ -1,0 +1,9 @@
+Internal linkage confines a variable or function to the file where it's declared, while external linkage allows access across multiple files. In the code, g_sysClock in the Seneca namespace demonstrates external linkage.
+
+Static variables, like counter in Event::display(), maintain values between function calls. They are valuable for state retention without resorting to global variables, initializing once and persisting until program exit
+
+The Event class was enhanced with a default constructor, display function for event info, and a set function for updating details. g_sysClock was moved to seneca namespace for broader accessibility. Dynamic memory allocation for the description was replaced with a fixed-size array (desc[129]) for simplicity
+
+Proper header guards (#ifndef SENECA_EVENT_H) prevent multiple inclusions. Consistent use of the seneca namespace ensures encapsulation of classes and variables.
+
+Ensuring header guards followed conventions and namespace consistency were challenges. Overcoming them involved using unique identifiers and maintaining consistent namespace usage, reinforcing good C++ practices
