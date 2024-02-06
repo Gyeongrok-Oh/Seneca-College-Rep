@@ -8,10 +8,10 @@
 using namespace std;
 
 namespace seneca {
+
     size_t g_sysClock;
 
-    Event::Event() : time(0) {
-        desc[0] = '\0'; // Empty description initially
+    Event::Event() : desc(nullptr), time(0) {
     }
 
     void Event::display() const {
@@ -25,7 +25,7 @@ namespace seneca {
         cout << counter;
         cout << ". ";
 
-        if (desc[0] != '\0') {
+        if (desc != nullptr && desc[0] != 0) {
             size_t hours = time / 3600;
             g_sysClock %= 3600;
 
@@ -57,15 +57,55 @@ namespace seneca {
         counter++;
     }
 
-    void Event::set(const char description[]) {
+    void Event::set(const char* description) {
 
-        if (description != nullptr && description[0] != '\0') {
+        delete[] desc;
+        desc = nullptr;
+
+        if (description != nullptr && description[0] != 0) {
             time = g_sysClock;
+            desc = new char[strlen(description) + 1];
             strcpy(desc, description);
-            desc[strlen(desc)] = '\0';
-        }
-        else {
-            desc[0] = '\0';
         }
     }
+
+    Event::Event(const Event& event) : desc(nullptr)
+    {
+        time = event.time;
+
+        delete[] desc;
+        desc = nullptr;
+
+        if (event.desc != nullptr && event.desc[0] != 0) {
+            desc = new char[strlen(event.desc) + 1];
+            strcpy(desc, event.desc);
+        }
+       
+    }
+
+    Event& Event::operator=(const Event& event)
+    {
+        if (this != &event) {
+            time = event.time;
+
+   
+            delete[] desc;
+            desc = nullptr;
+
+            // Copy the description
+            if (event.desc != nullptr) {
+                desc = new char[strlen(event.desc) + 1];
+                strcpy(desc, event.desc);
+            }
+        }
+
+        return *this;
+    }
+
+    Event::~Event()
+    {
+        delete[] desc;
+        desc = nullptr;
+    }
+
 }

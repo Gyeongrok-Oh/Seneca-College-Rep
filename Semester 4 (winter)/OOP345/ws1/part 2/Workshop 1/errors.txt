@@ -1,0 +1,11 @@
+In file included from event.cpp:6:
+event.h: In constructor ‘seneca::Event::Event()’:
+event.h:19:16: warning: ‘seneca::Event::time’ will be initialized after [-Wreorder]
+   19 |         size_t time;
+      |                ^~~~
+event.h:18:16: warning:   ‘char* seneca::Event::desc’ [-Wreorder]
+   18 |         char * desc;
+      |                ^~~~
+event.cpp:13:5: warning:   when initialized here [-Wreorder]
+   13 |     Event::Event() : time(0), desc(nullptr) {
+      |     ^~~~~

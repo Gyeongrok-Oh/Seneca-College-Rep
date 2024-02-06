@@ -1,0 +1,41 @@
+A(n) Project schedule is a model of a real project–what you want to happen or what you think will happen.
+
+A(n) link is a logical connection between tasks that controls sequence and dependency.
+
+A group of closely related tasks that encompass a major section of your project is a(n)Phase
+
+A(n)Calendar is a scheduling tool that determines the standard working time and nonworking time for the project, resources, and tasks.
+
+A(n)Templateis a pre-defined file that can be used as a starting point to create a project schedule
+
+A(n)Note is supplemental text that you can attach to a task, resource, or assignment.
+
+A(n)Exception is added to the project calendar to denote something different from thestandard working times
+
+A task whose start or end date determines the start or finish of another task or tasks is a(n)predecessor
+
+A(n)Milestonerepresents a significant event reached within the project or imposed uponthe project.
+
+A(n)Tasksrepresents the actual individual work activities that must be done toaccomplish the final goal.
+
+Manual scheduling is not the default mode and creates a dynamic schedule. F
+
+When you initially enter tasks into Project, they are linked in a finish-to-startrelationship that can be changed later. T
+
+The task note field can only contain words and not pictures F
+
+A milestone can be imposed on the project or developed and used by the project team totrack project progress F
+
+An estimated duration of 3 weeks for a task would be shown as 3w. T
+
+A task calendar defines working and nonworking times for an individual work resource T
+
+A summary task is derived from all of the detail tasks that fall below it T
+
+Once you have entered all of the tasks and durations for a project, the project durationdoes not change. F
+
+Tasks that are indented below a summary task are called successors T
+
+For all tasks that are linked in a finish-to-start relationship, the finish date of thepredecessor task determines the start date of the successor task. F
+
+

@@ -1,0 +1,12 @@
+In file included from Set.h:9,
+                 from w3_p2_prof.cpp:8:
+Collection.h:31:38: error: declaration of ‘operator<<’ as non-function
+   31 |                 friend std::ostream& operator<< <T, CAPACITY>(std::ostream& os, const Collection<T, CAPACITY>& collection);
+      |                                      ^~~~~~~~
+Collection.h:31:46: error: expected ‘;’ at end of member declaration
+   31 |                 friend std::ostream& operator<< <T, CAPACITY>(std::ostream& os, const Collection<T, CAPACITY>& collection);
+      |                                              ^~
+      |                                                ;
+Collection.h:31:49: error: expected unqualified-id before ‘<’ token
+   31 |                 friend std::ostream& operator<< <T, CAPACITY>(std::ostream& os, const Collection<T, CAPACITY>& collection);
+      |                                                 ^

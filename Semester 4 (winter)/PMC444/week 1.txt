@@ -1,0 +1,215 @@
+--week 1
+============================================================================================
+IT requirements assessment
+
+	1. Acess current state
+	2. Determine future state
+	3. Determine options & provide Recommt'n
+	4. Facilitate product roadmap development
+	5. Assemble business case
+	6. Project charter creation
+
+-Identify problem or opportunity
+============================================================================================
+Business analysis effort -> product requirements
+
+	1. Business requirements
+	2. Stakeholders requirements-----
+							 |----- Transition requirements 
+	3. Solution requirements     ------
+	|__Functional requirements
+	|__Nonfunctional reqirements
+============================================================================================
+Project management effort 
+
+	1. Project requirements
+	2. Quality requirements
+============================================================================================
+What Is a Project?
+
+	Project-- temporary effort aimed at creating a distinctive product, service, or result
+		   -- conclude upon achieving their goal or termination
+		   -- can be large or short and take long or short time
+
+	Operations(운영)--  work done to sustain the business
+============================================================================================
+Advantages of Using Formal Project Management
+
+	1. Control of financial, physical, and human resources
+	2. Customer relations
+	3. development times
+	4. low cost
+	5. quality and reliability
+	6, profit margins
+	7. productivity
+	8. internal coordination
+	9. worker morale
+ ============================================================================================
+Project Attributes
+
+	Project:
+		1. unique purpose
+ 		2. temporary
+		3. progressive elaboration
+		4. resources from various areas
+		5. primary customer or (sponser -> provide direction and funding)
+		6. uncertainty
+============================================================================================
+The Triple Constraint of ProjectManagement
+
+	1. scope 
+	2. cost
+	3. time
+============================================================================================
+What is Project Management?
+
+	Project management-- the application of knowledge, skills, tools and techniques to meet project requirements
+	Project managers strive-- triple constraint (project scope, time, and cost goals) and stakeholders needs and expectations entire process
+============================================================================================
+The project management process
+
+	1. Define project
+	2. plan & organize the project
+	3. track actual status
+	4. analyze and revise or manage changes
+	5. communicate status
+	6. conduct project close out
+	7. lessons learned
+	8. go back 1 step
+============================================================================================
+10 Project Management Knowledge areas
+
+	Knowledge areas-- key competencies that project managers must develop
+	
+	1. project intefration 
+	2. scope
+	3. time
+	4. cost
+	5. quality
+	6. resource
+	7. communication
+	8. risk
+	9. procurement
+	10. stakeholder management
+============================================================================================
+Project Stakeholders
+
+	Stakeholder-- involved in or affected by project activities
+	Stakeholders include:
+		1. project sponsor
+		2. project manager
+		3. project team
+		4. support staff
+		5. customers
+		6. users
+		7. suppliers
+		8. opponents
+============================================================================================
+Project management tools and techiques
+
+	Assist project manager and teams in various way
+	some specific ones include:
+		Scope-- project charter, scope statement, WBS
+		Time-- gantt charts, network diagrams, critical path analysis, critical chain scheduling
+		Cost-- estimate cost and  earned value management
+============================================================================================
+Super tools
+
+	Super tools-- have high use and high potential:
+		1. Software for task scheduling
+		2. scope statements
+		3. requirements analyses
+		4. lessons-learned reports
+
+	Tools that have been found to improve project importance:
+		1. progress reports
+		2. kick-off meeting
+		3. Gantt charts
+		4. change request
+============================================================================================
+Project success
+
+	1. met scope, time, cost goal
+	2. satisfied the customers or sponsor
+	3. key objectives like making or saving a certain amount of money,  good return on investment, sponsors happy
+============================================================================================
+What helps projects succeed?
+	
+	1. Executive support
+	2. user involvement
+	3. clear business objective
+	4. emotional maturity
+	5. optimizing scope
+	6. agile process
+	7. project management expertise
+	8. skilled resources
+	9. execution
+	10. tools and infrastructure
+============================================================================================
+the role of the project
+
+	acheive project goal: planning, scheduling, coordinating, working with people
+============================================================================================
+Suggested skill for project managers
+
+	1. Body of Knowledge
+	2. aplication area knowledge, standards and regulations
+	3. enviroment knowledge
+	4. general management knowledge and skills
+	5. soft skills or human relations skills
+============================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

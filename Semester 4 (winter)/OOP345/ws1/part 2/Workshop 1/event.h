@@ -15,13 +15,16 @@ namespace seneca {
     extern size_t g_sysClock;
 
     class Event {
-        char desc[129];
+        char * desc;
         size_t time;
 
     public:
         Event();
         void display() const;
-        void set(const char description[] = nullptr);
+        void set(const char* description = nullptr);
+        Event(const Event& event);
+        Event& operator=(const Event& event);
+        ~Event();
     };
 }
 

@@ -1,0 +1,22 @@
+StringSet.cpp: In constructor ‘seneca::StringSet::StringSet(const char*)’:
+StringSet.cpp:31:44: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+   31 |                         for (auto i = 0; i < numStrings; i++) {
+      |                                          ~~^~~~~~~~~~~~
+StringSet.cpp: At global scope:
+StringSet.cpp:84:9: error: declaration of ‘seneca::StringSet::StringSet(seneca::StringSet&&) noexcept’ has a different exception specifier
+   84 |         StringSet::StringSet(StringSet&& other)noexcept {
+      |         ^~~~~~~~~
+In file included from StringSet.cpp:1:
+StringSet.h:20:9: note: from previous declaration ‘seneca::StringSet::StringSet(seneca::StringSet&&)’
+   20 |         StringSet(StringSet&& other);
+      |         ^~~~~~~~~
+StringSet.cpp:91:20: error: declaration of ‘seneca::StringSet& seneca::StringSet::operator=(seneca::StringSet&&) noexcept’ has a different exception specifier
+   91 |         StringSet& StringSet::operator=(StringSet&& other)noexcept
+      |                    ^~~~~~~~~
+StringSet.h:21:20: note: from previous declaration ‘seneca::StringSet& seneca::StringSet::operator=(seneca::StringSet&&)’
+   21 |         StringSet& operator=(StringSet&& other);
+      |                    ^~~~~~~~
+TimedEvents.cpp: In function ‘std::ostream& seneca::operator<<(std::ostream&, const TimedEvents&)’:
+TimedEvents.cpp:41:36: warning: comparison of integer expressions of different signedness: ‘int’ and ‘const size_t’ {aka ‘const long unsigned int’} [-Wsign-compare]
+   41 |                 for (auto i = 0; i < timeEvent.numRec; i++) {
+      |                                  ~~^~~~~~~~~~~~~~~~~~
