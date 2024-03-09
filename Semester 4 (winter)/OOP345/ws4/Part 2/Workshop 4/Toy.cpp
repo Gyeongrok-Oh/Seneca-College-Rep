@@ -1,3 +1,8 @@
+//Name : Gyeongrok Oh
+//Email : goh3@myseneca.ca
+//Student Id : 119140226
+//I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+
 #include "Toy.h"
 
 using namespace std;
@@ -11,24 +16,20 @@ namespace seneca {
 		numOfItems = numItems;
 	}
 	Toy::Toy(const std::string& toy) {
-		// Find the position of ':' for each attribute
 		size_t posId = toy.find(':');
 		size_t posName = toy.find(':', posId + 1);
 		size_t posNum = toy.find(':', posName + 1);
 
-		// Extract substrings for each attribute
 		std::string idStr = toy.substr(0, posId);
 		std::string nameStr = toy.substr(posId + 1, posName - posId - 1);
 		std::string numStr = toy.substr(posName + 1, posNum - posName - 1);
 		std::string priceStr = toy.substr(posNum + 1);
 
-		// Convert the extracted substrings to the appropriate types
 		orderId = std::stoi(idStr);
 		name = nameStr;
 		numOfItems = std::stoi(numStr);
 		price = std::stod(priceStr);
 
-		// Remove leading and trailing spaces from name
 		size_t firstNotSpace = name.find_first_not_of(' ');
 		size_t lastNotSpace = name.find_last_not_of(' ');
 		name = name.substr(firstNotSpace, lastNotSpace - firstNotSpace + 1);
@@ -36,27 +37,29 @@ namespace seneca {
 
 	std::ostream& operator<<(std::ostream& os, const Toy& toy)
 	{
-		cout << "Toy ";
-		cout.width(8);
-		cout << toy.orderId;
-		cout.width(18);
-		cout.setf(ios::right);
-		cout << toy.name;
-		cout.width(3) << toy.numOfItems;
-		cout << " items ";
-		cout.setf(ios::fixed);
-		cout.precision(2);
-		cout.width(8);
-		cout << toy.price;
-		cout << "/item subtotal:";
-		cout.width(7);
-		cout << toy.price * toy.numOfItems;
-		cout << "tax:";
-		cout.width(6);
-		cout << toy.HST * toy.price * toy.numOfItems;
-		cout << " total:";
-		cout.width(7);
-		cout << (1 + toy.HST) * toy.price * toy.numOfItems << endl;
+		os << "Toy";
+		os.width(8);
+		os << toy.orderId;
+		os << ":";
+		os.width(18);
+		os.setf(ios::right);
+		os << toy.name;
+		os.width(3);
+		os << toy.numOfItems;
+		os << " items";
+		os.setf(ios::fixed);
+		os.precision(2);
+		os.width(8);
+		os << toy.price;
+		os << "/item  subtotal:";
+		os.width(7);
+		os << toy.price * toy.numOfItems;
+		os << " tax:";
+		os.width(6);
+		os << toy.HST * toy.price * toy.numOfItems;
+		os << " total:";
+		os.width(7);
+		os << (1 + toy.HST) * toy.price * toy.numOfItems << endl;
 
 		return os;
 	}

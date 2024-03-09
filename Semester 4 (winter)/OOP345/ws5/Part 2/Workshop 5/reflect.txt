@@ -1,0 +1,22 @@
+Functor vs. Lambda Expression:
+A functor is a class or a struct that overloads the function call operator operator(). It is typically used to create objects that can be called as if they were functions. On the other hand, a lambda expression is an anonymous function defined using a concise syntax {}.
+Functors are more suitable when the functionality is complex or requires state, as they can have member variables. Lambdas are preferable for short, one-time-use functions.
+In this workshop, a lambda expression is used to define the updateBookPrice function, which modifies the price of a book based on certain conditions. It's appropriate in this case as it's a short and specific operation used only in one place.
+
+Exception Handling in SpellChecker Constructor:
+The constructor for SpellChecker generates an exception when it cannot open the specified file. To achieve the same result without exceptions, one approach is to return an error status or use a boolean flag to indicate success or failure. Alternatively, you could use a try-catch block in the client code to handle the exception.
+Comparing the two solutions:
+Exception approach: Cleaner and separates the error handling logic from the regular flow. It provides a clear indication of what went wrong.
+Non-exception approach: May require additional status checking after each call to ensure proper initialization. The client code needs to explicitly check for errors.
+
+Avoiding Logic Duplication in Movie and Book Classes:
+To avoid duplicating the logic for loading data from a file, a common approach is to create a base class (e.g., Media) with a virtual function for loading data. The Movie and Book classes can then inherit from this base class and provide their own implementations for loading specific data.
+This ensures that the common functionality is centralized in the base class, promoting code reusability and reducing redundancy.
+
+Default Constructor in Movie and Book Classes:
+The default constructor in the Movie and Book classes initializes member variables to default values. It may be necessary if instances need to be created without immediately loading data from a file or if default values are required.
+However, if instances are always expected to be initialized with data from a file, and default values are not meaningful, the default constructor could be removed to enforce proper initialization. This depends on the design requirements of the classes.
+
+
+
+

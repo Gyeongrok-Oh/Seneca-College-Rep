@@ -1,0 +1,29 @@
+Relationship between Child and Toy:
+The Child class has an attribute const seneca::Toy** toys, representing a dynamically allocated array of pointers to Toy objects. This constitutes a composition relationship as the Child class encapsulates instances of the Toy class.
+The Child class takes ownership of the dynamically allocated array of Toy pointers. It is responsible for creating, managing, and deallocating these objects. This implies a strong ownership relationship, where the Child class is accountable for the creation and destruction of the Toy objects held in the array.
+
+Relationship between Child and the array of pointers:
+The array of pointers const seneca::Toy** toys is a member of the Child class, indicating a composition relationship. The array is created, managed, and deallocated by the Child class.
+The Child class aggregates the Toy objects using an array of pointers, signifying that the Child class is associated with the Toy objects, but the Toy objects can exist independently outside of the Child class.
+The Child class takes ownership of the dynamically allocated Toy pointer array, and it is responsible for managing the memory associated with these pointers
+
+Child class encompasses and manages a dynamic array of pointers to Toy objects, establishing a composition relationship. The Child class holds ownership and responsibility for the creation and destruction of the Toy objects stored in the array.
+
+Composition vs. Aggregation:
+In this workshop, both the Child and ConfirmOrder classes have an attribute of type const Toy**, representing an array of pointers to Toy objects. The difference lies in the relationship with the Toy class.
+For the Child class, it exhibits a composition relationship with Toy since it owns and is responsible for the creation and destruction of the Toy objects in the array. In contrast, ConfirmOrder demonstrates an aggregation relationship, signifying that it is associated with Toy objects, but these objects can exist independently outside of the ConfirmOrder class.
+
+
+Move and Copy Functions:
+The move and copy functions are implemented differently based on the type of relationship (composition or aggregation).
+In the composition relationship, as seen in the Child class, the move and copy functions involve deep copying of the dynamically allocated array of Toy pointers. Ownership is transferred in the move functions to prevent double deletion of memory.
+In the aggregation relationship, as demonstrated in the ConfirmOrder class, the move and copy functions involve copying the pointers themselves without creating new instances of Toy. This reflects a looser association where the ConfirmOrder class is linked to existing Toy objects.
+
+Use of Association, Aggregation, and Composition:
+The Child class showcases composition with its ownership of a dynamic array of Toy pointers, reflecting a strong relationship.
+The ConfirmOrder class demonstrates aggregation as it maintains an array of Toy pointers without direct ownership, indicating a looser association.
+The Toy class itself represents association, as it stands independently and can be referenced by both Child and ConfirmOrder classes.
+
+
+
+

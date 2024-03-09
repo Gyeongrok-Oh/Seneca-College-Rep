@@ -1,3 +1,8 @@
+//Name : Gyeongrok Oh
+//Email : goh3@myseneca.ca
+//Student Id : 119140226
+//I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+
 #include "ConfirmOrder.h"
 
 using namespace std;
@@ -5,52 +10,102 @@ using namespace std;
 namespace seneca {
     ConfirmOrder& ConfirmOrder::operator+=(const Toy& toy)
     {
-        bool is_add{ true };
-
         for (size_t i = 0; i < cnt; i++) {
             if (m_toys[i] == &toy) {
-                is_add = false;
+                return *this;  
             }
         }
 
-        if (is_add) {
-            const Toy** temp = new const Toy * [cnt + 1];
+        const Toy** temp = new const Toy * [cnt + 1];
 
-            for (size_t i = 0; i < cnt; i++) {
-                temp[i] = m_toys[i];
-            }
-
-            temp[cnt++] = &toy;
-
-            // Delete the old array
-            delete[] m_toys;
-
-            // Update m_toys to point to the new array
-            m_toys = temp;
+        for (size_t i = 0; i < cnt; i++) {
+            temp[i] = m_toys[i];
         }
+
+        temp[cnt] = &toy;
+
+        deallocate();
+
+        m_toys = temp;
+
+        
+        cnt++;
 
         return *this;
     }
 
 
-    ConfirmOrder& ConfirmOrder::operator-=(const Toy& toy) {
-        // Search for the address of toy in the array
-        for (size_t i = 0; i < cnt; ++i) {
-            if (m_toys[i] == &toy) {
-                // Set the pointer to nullptr to remove the toy from the array
-                m_toys[i] = nullptr;
-                cnt--;
-                for (size_t j = i; j < cnt; j++) {
-                    m_toys[j] = m_toys[j + 1];
-                }
-                return *this;
-            }
-        }
 
-        return *this; // Toy not found in the array, do nothing
+    ConfirmOrder& ConfirmOrder::operator-=(const Toy& toy) {
+        if (cnt > 0) { 
+            bool found = false; 
+            size_t index = 0; 
+            
+            for (size_t i = 0; i < cnt && !found; i++) { 
+                if (m_toys[i] == &toy) { 
+                    m_toys[i] = nullptr; 
+                    found = true; 
+                    index = i; 
+                } 
+            
+            } 
+            
+            if (found) { 
+                for (size_t j = index; j < cnt - 1; j++) { 
+                    m_toys[j] = m_toys[j + 1]; 
+                } 
+                
+                m_toys[cnt - 1] = nullptr; 
+                
+                cnt--; 
+            } 
+        
+        } 
+        
+        return *this;
     }
 
 
+    ConfirmOrder::ConfirmOrder(const ConfirmOrder& other)
+    {
+        *this = other;
+    }
+
+    ConfirmOrder& ConfirmOrder::operator=(const ConfirmOrder& other)
+    {
+        if (this != &other) {
+            cnt = other.cnt;
+
+ 
+            m_toys = new const Toy * [cnt];
+
+            for (size_t i = 0; i < cnt; i++) {
+                m_toys[i] = other.m_toys[i];
+            }
+
+        }
+        return *this;
+    }
+
+    ConfirmOrder::ConfirmOrder(ConfirmOrder&& other) noexcept
+    {
+        *this = move(other);
+    }
+
+    ConfirmOrder& ConfirmOrder::operator=(ConfirmOrder&& other) noexcept
+    {
+        if (this != &other) {
+
+            cnt = other.cnt;
+
+            m_toys = other.m_toys;
+
+            other.m_toys = nullptr;
+
+            other.cnt = 0;
+        }
+        return *this;
+    }
 
 
     std::ostream& operator<<(std::ostream& os, const ConfirmOrder& other)
@@ -73,14 +128,24 @@ namespace seneca {
         return os;
     }
 
+    void ConfirmOrder::deallocate()
+    {
+        for (size_t i = 0; i < cnt; i++) {
+            m_toys[i] = nullptr;
+        }
+
+        delete[] m_toys;
+        m_toys = nullptr;
+    }
+
     ConfirmOrder::ConfirmOrder() : m_toys(0), cnt(0)
     {
 
     }
 
     ConfirmOrder::~ConfirmOrder() {
-        // Deallocate memory for the array
-       /* delete[] m_toys;*/
+        
+        deallocate();
     }
 
 }

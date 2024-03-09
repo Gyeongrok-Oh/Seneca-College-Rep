@@ -1,0 +1,4 @@
+Student.cpp: In constructor ‘seneca::Student::Student(std::istream&)’:
+Student.cpp:71:35: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
+   71 |                 for (int i = 0; i < m_count; i++) {
+      |                                 ~~^~~~~~~~~

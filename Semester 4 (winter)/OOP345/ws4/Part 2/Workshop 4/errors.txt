@@ -1,0 +1,17 @@
+ConfirmOrder.cpp: In member function ‘seneca::ConfirmOrder& seneca::ConfirmOrder::operator=(seneca::ConfirmOrder&&)’:
+ConfirmOrder.cpp:96:13: error: ‘deallocate’ was not declared in this scope
+   96 |             deallocate();
+      |             ^~~~~~~~~~
+ConfirmOrder.cpp: At global scope:
+ConfirmOrder.cpp:130:10: error: no declaration matches ‘void seneca::ConfirmOrder::deallocate()’
+  130 |     void ConfirmOrder::deallocate()
+      |          ^~~~~~~~~~~~
+ConfirmOrder.cpp:130:10: note: no functions named ‘void seneca::ConfirmOrder::deallocate()’
+In file included from ConfirmOrder.cpp:1:
+ConfirmOrder.h:7:15: note: ‘class seneca::ConfirmOrder’ defined here
+    7 |         class ConfirmOrder {
+      |               ^~~~~~~~~~~~
+ConfirmOrder.cpp: In destructor ‘seneca::ConfirmOrder::~ConfirmOrder()’:
+ConfirmOrder.cpp:147:9: error: ‘deallocate’ was not declared in this scope
+  147 |         deallocate();
+      |         ^~~~~~~~~~

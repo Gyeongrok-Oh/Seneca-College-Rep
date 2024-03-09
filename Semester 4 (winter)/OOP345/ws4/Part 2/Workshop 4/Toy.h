@@ -1,3 +1,8 @@
+//Name : Gyeongrok Oh
+//Email : goh3@myseneca.ca
+//Student Id : 119140226
+//I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+
 #ifndef SENECA_TOY_H
 #define SENECA_TOY_H
 
