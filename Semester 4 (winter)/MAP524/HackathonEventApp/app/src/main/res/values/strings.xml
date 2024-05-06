@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">HackathonEventApp</string>
+    <string-array name="gender_spinner">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Non-binary</item>
+        <item>Prefer not to say</item>
+        <item>Other</item>
+    </string-array>
+</resources>
+
+

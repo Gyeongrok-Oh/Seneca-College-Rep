@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CookingClassApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="culinary_image_description">A delicious culinary creation</string>
+    <string name="welcome_message">Welcome to <b>Cooking Class App!</b><i>Discover the art of culinary delights.</i></string>
+    <string name="featured_recipes">Discover our featured recipes and elevate your culinary skills with a variety of delicious dishes. From quick and easy meals to gourmet delights, explore a world of flavors that will inspire your inner chef!</string>
+    <string name="recipe_image_description">A delicious recipe image</string>
+    <string name="recipe_thumbnail_description"> this is recipe desc</string>
+</resources>

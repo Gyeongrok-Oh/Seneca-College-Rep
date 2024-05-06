@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/mainLayout"
+    tools:context=".FeedbackActivity">
+
+    <!-- Feedback Title -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Feedback"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textSize="28sp" />
+
+        <EditText
+            android:id="@+id/feedbackEditText"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="50dp"
+            android:hint="Enter your feedback"
+            android:inputType="textMultiLine"
+            android:layout_marginBottom="16dp"/>
+
+        <Button
+            android:id="@+id/submitFeedbackButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit Feedback"/>
+
+    </LinearLayout>
+
+    <!-- Red SeekBar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/redTextView"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="Red"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+        <SeekBar
+            android:id="@+id/redSeekBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:max="255"
+            android:progress="255" />
+    </LinearLayout>
+
+    <!-- Green SeekBar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/greenTextView"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="Green"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+        <SeekBar
+            android:id="@+id/greenSeekBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:max="255"
+            android:progress="255" />
+    </LinearLayout>
+
+    <!-- Blue SeekBar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/blueTextView"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="Blue"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+        <SeekBar
+            android:id="@+id/blueSeekBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:max="255"
+            android:progress="255" />
+    </LinearLayout>
+
+    <!-- Bottom Navigation Bar -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_nav_menu"
+        android:id="@+id/bottom_nav"/>
+</LinearLayout>
