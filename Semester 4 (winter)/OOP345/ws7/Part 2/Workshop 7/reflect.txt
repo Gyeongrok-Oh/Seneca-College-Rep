@@ -1,0 +1,37 @@
+In completing this workshop, I utilized several STL functions and algorithms to manage and manipulate collections of songs efficiently. Here's a list of the STL functions used in the code:
+
+std::ifstream: Used to read from files.
+std::getline: Used to read lines from a file.
+std::stoi: Used to convert strings to integers.
+std::stod: Used to convert strings to doubles.
+std::sort: Used to sort the collection of songs based on different fields.
+std::for_each: Used to iterate over elements in the collection.
+std::copy_if: Used to copy elements from one collection to another based on a condition.
+std::any_of: Used to check if any element in the collection satisfies a condition.
+std::back_inserter: Used to insert elements at the end of a container.
+Each of these functions was chosen for its specific purpose within the context of the program. For instance, std::sort was used for sorting the collection of songs based on different fields such as title, album, or length. Using STL algorithms offers several advantages over implementing the functionality manually using loops:
+
+Readability and Maintainability: STL algorithms provide expressive and concise code, making it easier to understand and maintain.
+Efficiency: STL algorithms are optimized and well-tested, often outperforming hand-written loops in terms of speed and memory usage.
+Abstraction: STL algorithms abstract away low-level details, allowing developers to focus on the logic rather than implementation details.
+Regarding the function that sorts the collection of songs based on a field name provided by the client, a potential issue arises if the client misspells the field name or specifies an invalid field. To prevent such errors at compile time, the function signature could be redesigned to use an enum or constants representing valid field names instead of strings. For example:
+
+enum class SortField { Title, Album, Length };
+
+void SongCollection::sort(SortField field) {
+    switch (field) {
+        case SortField::Title:
+            std::sort(m_songs.begin(), m_songs.end(), [](const Song& a, const Song& b) {
+                return a.m_title < b.m_title;
+            });
+            break;
+        case SortField::Album:
+            
+            break;
+        case SortField::Length:
+            
+            break;
+        default:
+            throw "Invalid field for sorting.";
+    }
+}

@@ -1,8 +1,9 @@
-﻿  Employee.cpp
+﻿  College.cpp
+  Employee.cpp
   Professor.cpp
   Student.cpp
-C:\Users\0kr36\Seneca-College-Rep\Semester 4 (winter)\OOP345\ws6\Part 2\Workshop 6\Student.cpp(59,39): warning C4101: 'e': unreferenced local variable
-C:\Users\0kr36\Seneca-College-Rep\Semester 4 (winter)\OOP345\ws6\Part 2\Workshop 6\Student.cpp(63,35): warning C4101: 'e': unreferenced local variable
+C:\Users\0kr36\Seneca-College-Rep\Semester 4 (winter)\OOP345\ws6\Part 2\Workshop 6\Student.cpp(62,39): warning C4101: 'e': unreferenced local variable
+C:\Users\0kr36\Seneca-College-Rep\Semester 4 (winter)\OOP345\ws6\Part 2\Workshop 6\Student.cpp(66,35): warning C4101: 'e': unreferenced local variable
   Utilities.cpp
   w6_p2.cpp
   Generating Code...

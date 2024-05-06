@@ -1,0 +1,4 @@
+utilities.cpp: In function ‘seneca::List<seneca::Product> seneca::mergeSmart(const List<Description>&, const List<Price>&)’:
+utilities.cpp:52:59: error: ‘n’ was not declared in this scope
+   52 |                                 if (desc[i].code == price[n].code) {
+      |                                                           ^

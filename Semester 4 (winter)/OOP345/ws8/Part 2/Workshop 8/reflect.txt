@@ -1,0 +1,11 @@
+Completing this workshop has reinforced my understanding of smart pointers and their advantages over raw pointers. Smart pointers, such as std::unique_ptr and std::shared_ptr, provide automatic memory management, preventing memory leaks and dangling pointers.
+In my solution, I used std::unique_ptr to manage dynamic memory allocation, ensuring that resources are appropriately deallocated when they go out of scope. For example, when creating products in the mergeRaw function, I used std::unique_ptr<Product> instead of raw pointers. This simplifies memory management and makes the code safer and more robust.
+My solution's main difference between raw and brilliant pointer syntax lies in memory management. With raw pointers, developers must manually allocate and deallocate memory, which can lead to memory leaks and undefined behaviour if not done correctly. In contrast, intelligent pointers handle memory management automatically, reducing the risk of memory-related errors.
+Additionally, intelligent pointers provide better safety guarantees. For instance, std::unique_ptr ensures exclusive ownership of dynamically allocated objects, preventing accidental deletion or access violations. In contrast, raw pointers offer no such guarantees, making introducing bugs in the code easier.
+Smart pointer syntax improves code readability, safety, and reliability, making it a preferred choice for modern C++ development.
+Lastly, I encountered an error when I attempted to access memory that had already been deallocated, causing undefined behaviour. This occurred because I invoked temp->validate() after deleting the memory pointed to by temp.
+
+
+
+
+

@@ -1,0 +1,4 @@
+TreasureMap.cpp: In member function ‘size_t seneca::TreasureMap::findTreasure(char)’:
+TreasureMap.cpp:121:16: warning: unused variable ‘partitionSize’ [-Wunused-variable]
+  121 |         size_t partitionSize = rows / numThreads;
+      |                ^~~~~~~~~~~~~

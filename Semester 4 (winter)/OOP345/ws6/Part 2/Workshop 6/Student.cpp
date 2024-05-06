@@ -1,5 +1,9 @@
+//Student Name: Gyeongrok oh
+//Student Email: goh3@myseneca.ca
+//Student Id: 119140226
+//I declare that this submission is the result of my own work and I only copied the code that my professor provided to complete my workshops and assignments. This submitted piece of work has not been shared with any other student or 3rd party content provider.
+
 #include "Student.h"
-#include "Utilities.h"
 
 using namespace std;
 
@@ -19,8 +23,8 @@ namespace seneca {
 		m_name.erase(0, m_name.find_first_not_of(" \t\r\n"));
 		m_name.erase(m_name.find_last_not_of(" \t\r\n") + 1);
 
-		startIndex = endIndex + 1;  // Move to the next character after the comma
-		endIndex = str.find(',', startIndex);  // Find the next comma
+		startIndex = endIndex + 1;  
+		endIndex = str.find(',', startIndex);  
 		m_age = str.substr(startIndex, (endIndex - startIndex));
 
 		m_age.erase(0, m_age.find_first_not_of(" \t\r\n"));
@@ -38,7 +42,7 @@ namespace seneca {
 		m_id.erase(0, m_id.find_first_not_of(" \t\r\n"));
 		m_id.erase(m_id.find_last_not_of(" \t\r\n") + 1);
 
-		// Validate ID
+
 		if (tolower(m_id[0]) != 's') {
 			throw m_name + "++Invalid record!";
 		}
@@ -56,11 +60,11 @@ namespace seneca {
 			m_count = std::stoi(countStr);
 		}
 		catch (const std::invalid_argument& e) {
-			// Handle the case where conversion fails
+
 			throw std::runtime_error("Invalid count value: " + countStr);
 		}
 		catch (const std::out_of_range& e) {
-			// Handle the case where the converted value is out of range
+
 			throw std::runtime_error("Count value out of range: " + countStr);
 		}
 
@@ -77,13 +81,10 @@ namespace seneca {
  
     }
 
-    // Destructor
     Student::~Student() {
-        // Deallocate memory for courses
         delete[] m_courses;
     }
 
-    // Public Member Functions
 
     std::string Student::status() const {
         return "Student";
@@ -94,7 +95,6 @@ namespace seneca {
     }
 
     void Student::display(std::ostream& out) const {
-        // Display format: | Student | id | name | age | courses
 		out.setf(ios::left);
 		out << "| ";
 		out.width(10);

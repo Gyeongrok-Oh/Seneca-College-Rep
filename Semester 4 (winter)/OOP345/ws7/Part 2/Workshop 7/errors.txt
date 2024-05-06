@@ -1,0 +1,4 @@
+In file included from w7_p1_prof.cpp:5:
+SongCollection.h:14:23: warning: ‘seneca::totalLength’ defined but not used [-Wunused-variable]
+   14 |         static size_t totalLength;
+      |                       ^~~~~~~~~~~

@@ -1,3 +1,8 @@
+//Student Name: Gyeongrok oh
+//Student Email: goh3@myseneca.ca
+//Student Id: 119140226
+//I declare that this submission is the result of my own work and I only copied the code that my professor provided to complete my workshops and assignments. This submitted piece of work has not been shared with any other student or 3rd party content provider.
+
 #include "Utilities.h"
 
 namespace seneca {
@@ -8,7 +13,7 @@ namespace seneca {
         in >> tag;
 
         if (!in.good()) {
-            // Handle the error or return nullptr
+
             return nullptr;
         }
 
@@ -28,4 +33,4 @@ namespace seneca {
         return nullptr;
     }
 
-} // namespace seneca
+}

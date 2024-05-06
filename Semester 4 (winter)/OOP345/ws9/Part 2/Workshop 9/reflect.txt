@@ -1,0 +1,10 @@
+In completing this workshop, I gained a deeper understanding of several key concepts in C++ programming, particularly in file I/O, multithreading, and the use of futures and packaged tasks.
+
+Binary Files Usage: Binary files were used extensively in this workshop for reading and writing map data. Compared to non-binary files, binary files offer a more efficient and direct way to store and retrieve data, especially when dealing with structured data like the Treasure Map. By using binary files, we could serialize the map data directly into binary format, preserving its structure and eliminating the need for parsing during reading.
+
+Function Binding: Binding a function to its arguments was crucial in this workshop, particularly in the multithreading implementation of findTreasure method. By using std::bind, we were able to bind the digForTreasure function with the mark argument, creating a callable object that could be executed asynchronously in multiple threads. This allowed us to distribute the task of searching for treasure among different threads efficiently.
+
+Advantages of Multithreading: Multithreading provided significant advantages in terms of performance and efficiency in this workshop. By dividing the map into partitions and processing them concurrently using multiple threads, we were able to significantly reduce the time required to search for treasure. This approach maximized CPU utilization and improved overall system responsiveness.
+
+Futures and Packaged Tasks: Futures and packaged tasks were integral components of the multithreading implementation. Packaged tasks allowed us to encapsulate the digForTreasure function along with its arguments, while futures provided a mechanism for asynchronously retrieving the result of each task. By associating packaged tasks with futures, we could coordinate the execution of tasks across multiple threads and collect their results efficiently.
+

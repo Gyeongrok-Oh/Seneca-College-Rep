@@ -1,0 +1,17 @@
+Why deallocate dynamically allocated memory in a vector? 
+When you dynamically allocate memory (e.g., using new in C++), it is your responsibility to free that memory when it is no longer needed. If you don’t deallocate the memory, it can lead to memory leaks, where the program consumes more and more memory over time. In the context of vectors, if you store pointers to dynamically allocated objects (e.g., seneca::Person*) in a vector, you should ensure that you delete those objects before the vector goes out of scope. Otherwise, the memory allocated for those objects won’t be released.
+
+Detecting errors in loadData() function: The loadData() function reads data from an input file and constructs seneca::Person objects. To detect errors, you can consider the following approaches:
+Exception Handling: The code already uses exception handling (try-catch) to handle errors during data extraction. If an error occurs (e.g., invalid data format), an exception (e.g., a std::string containing an error message) is thrown. You can catch these exceptions and handle them appropriately (e.g., print an error message).
+Data Validation: Before constructing a seneca::Person object, validate the data read from the file. For example, check if the data represents a valid person (e.g., valid name, age, etc.). If any data is invalid, skip that record or log an error.
+Return Codes: Instead of exceptions, you can use return codes (e.g., 0 for success, non-zero for errors) to indicate the success or failure of data extraction. The caller (e.g., main()) can then handle these return codes.
+
+Using std::list<seneca::Person> and std::vector<seneca::Person> instead of pointers:
+std::list<seneca::Person>: This container stores actual seneca::Person objects (not pointers). It is useful when you need efficient insertion and deletion at both ends (front and back) because it doesn’t require reallocation of memory. However, accessing elements by index is less efficient.
+std::vector<seneca::Person>: This container also stores actual seneca::Person objects. It is useful when you need efficient random access (by index) and dynamic resizing. However, inserting or deleting elements in the middle of the vector can be less efficient due to reallocation and copying.
+
+Justification:
+If you need frequent insertion and deletion (e.g., adding/removing persons dynamically), std::list might be a better choice because it avoids reallocation.
+If you primarily need random access (e.g., accessing persons by index), std::vector is more suitable.
+Since the code uses pointers (seneca::Person*), it likely needs flexibility in adding/removing persons, so using pointers with std::vector makes sense.
+If you used actual seneca::Person objects, you’d lose the flexibility of dynamically adding/removing persons (unless you resort to copying/moving objects, which can be expensive).
